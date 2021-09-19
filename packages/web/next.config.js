@@ -12,7 +12,7 @@ const contentSecurityPolicy = Object.entries({
   'prefetch-src': "'self'",
   'script-src': isDev ? "'self' 'unsafe-inline' 'unsafe-eval'" : "'self'",
   'style-src': "'self' 'unsafe-inline'",
-  'img-src': isDev ? "'self' data:" : "'none'",
+  'img-src': "'self' data:",
   sandbox: 'allow-scripts allow-same-origin allow-forms allow-downloads',
   'frame-ancestors': "'none'",
   'trusted-types': "'none'",
