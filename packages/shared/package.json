@@ -1,0 +1,21 @@
+{
+  "name": "@locadocs/ui-components",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {},
+  "dependencies": {
+    "mongodb": "^4.1.2",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "zod": "^3.8.2"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.21",
+    "@babel/core": "^7.15.5",
+    "@babel/preset-env": "^7.15.6",
+    "@babel/preset-typescript": "^7.15.0",
+    "@types/node": "^16.9.2",
+    "babel-plugin-module-resolver": "^4.1.0",
+    "typescript": "^4.4.3"
+  }
+}

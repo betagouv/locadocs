@@ -1,0 +1,33 @@
+{
+  "name": "@locadocs/web",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next -p 3000",
+    "build": "yarn clean && next build && next export",
+    "test": "jest",
+    "type-check": "tsc",
+    "start": "yarn build && cd out && ws -p 3010"
+  },
+  "dependencies": {
+    "@locadocs/design-system": "*",
+    "@mdi/js": "^6.1.95",
+    "@mdi/react": "^1.5.0",
+    "@types/styled-components": "^5.1.14",
+    "mongodb": "^3.6.9",
+    "next": "^11.0.1",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "styled-components": "^5.3.1",
+    "zod": "^3.2.0"
+  },
+  "devDependencies": {
+    "@types/mongodb": "^3.6.18",
+    "@types/node": "^15.6.1",
+    "@types/react": "^17.0.7",
+    "babel-jest": "^27.0.1",
+    "mongodb-memory-server-core": "^7.2.0",
+    "next-transpile-modules": "^8.0.0",
+    "typescript": "^4.3.4"
+  }
+}

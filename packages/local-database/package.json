@@ -1,0 +1,14 @@
+{
+  "name": "@locadocs/local-database",
+  "author": "https://github.com/fabien-h",
+  "version": "1.0.0",
+  "description": "Database for local dev for Locadocs monorepo",
+  "private": true,
+  "main": "index.json",
+  "dependencies": {
+    "mongodb": "^4.1.2"
+  },
+  "scripts": {
+    "start": "node start.mjs"
+  }
+}
