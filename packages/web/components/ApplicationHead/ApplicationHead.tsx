@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import Head from 'next/head';
 
-export interface IHeadParams {
+export type THeadParams = {
   canonicalPath?: string;
   description?: string;
   hiddenPage?: boolean;
@@ -10,7 +10,7 @@ export interface IHeadParams {
   opengraphImagePath?: string;
   siteName?: string;
   title?: string;
-}
+};
 
 const rootDomain = 'https://locadocs.betagouv.fr';
 const defaultDescription =
@@ -29,7 +29,7 @@ export const ApplicationHead = ({
   opengraphImagePath = '/imgs/home/og-image.jpg',
   siteName = defaultSiteName,
   title = defaultTitle,
-}: IHeadParams): JSX.Element => (
+}: THeadParams): JSX.Element => (
   <>
     <Head>
       <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />

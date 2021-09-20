@@ -1,16 +1,11 @@
-import { ApplicationHead } from '@components/ApplicationHead';
-import { WebHeader } from '@components/WebHeader';
+import { SiteAlayout } from '@components/Layouts';
 import { ContentPage } from '@locadocs/design-system/components/ContentPage';
-import { WebFooter } from '@components/WebFooter';
 import * as React from 'react';
 import type { NextPage } from 'next';
 import * as TITLE from '@locadocs/design-system/components/Title';
 
 const PersonnalData: NextPage = () => (
-  <React.Fragment>
-    <ApplicationHead />
-    <WebHeader />
-
+  <SiteAlayout>
     <ContentPage>
       <TITLE.H1>Suivi d'audience et vie privée</TITLE.H1>
       <TITLE.H2>
@@ -55,9 +50,7 @@ const PersonnalData: NextPage = () => (
         .
       </p>
     </ContentPage>
-
-    <WebFooter />
-  </React.Fragment>
+  </SiteAlayout>
 );
 
 export default PersonnalData;

@@ -1,16 +1,11 @@
-import { ApplicationHead } from '@components/ApplicationHead';
+import { SiteAlayout } from '@components/Layouts';
 import { ContentPage } from '@locadocs/design-system/components/ContentPage';
-import { WebFooter } from '@components/WebFooter';
 import * as React from 'react';
 import type { NextPage } from 'next';
-import { WebHeader } from '@components/WebHeader';
 import * as TITLE from '@locadocs/design-system/components/Title';
 
 const Accessibility: NextPage = () => (
-  <React.Fragment>
-    <ApplicationHead />
-    <WebHeader />
-
+  <SiteAlayout>
     <ContentPage>
       <TITLE.H1>Déclaration d'accessibilité</TITLE.H1>
       <p>
@@ -28,9 +23,7 @@ const Accessibility: NextPage = () => (
         audité.
       </p>
     </ContentPage>
-
-    <WebFooter />
-  </React.Fragment>
+  </SiteAlayout>
 );
 
 export default Accessibility;

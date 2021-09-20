@@ -3,6 +3,7 @@ import * as TITLE from '@locadocs/design-system/components/Title';
 import { Link } from '@locadocs/design-system/components/Link';
 import { Container } from './HomeStyles';
 import { mdiArrowRight } from '@mdi/js';
+import * as ROUTES from '@constants/routes';
 
 export const Home: React.FC<unknown> = (): JSX.Element => {
   return (
@@ -47,7 +48,11 @@ export const Home: React.FC<unknown> = (): JSX.Element => {
           </li>
         </ul>
 
-        <Link label="Commencer" href="/" rightIcon={mdiArrowRight} />
+        <Link
+          label="Commencer"
+          href={ROUTES.ESTATE}
+          rightIcon={mdiArrowRight}
+        />
       </section>
     </Container>
   );

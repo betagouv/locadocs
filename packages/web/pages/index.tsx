@@ -1,18 +1,13 @@
-import { ApplicationHead } from '@components/ApplicationHead';
+import { SiteAlayout } from '@components/Layouts';
 import { Home } from '@views/Home';
-import { WebFooter } from '@components/WebFooter';
 import * as React from 'react';
 import type { NextPage } from 'next';
-import { WebHeader } from '@components/WebHeader';
 
 const Index: NextPage = () => {
   return (
-    <React.Fragment>
-      <ApplicationHead />
-      <WebHeader />
+    <SiteAlayout>
       <Home />
-      <WebFooter />
-    </React.Fragment>
+    </SiteAlayout>
   );
 };
 
