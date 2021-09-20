@@ -4,6 +4,8 @@ import * as COLORS from '@locadocs/design-system/constants/colors';
 import * as SPACINGS from '@locadocs/design-system/constants/spacings';
 
 export const Container = styled.div`
+  padding-bottom: ${SPACINGS.SPACING_10W};
+
   > header {
     > div {
       width: 100%;
