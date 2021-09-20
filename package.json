@@ -16,15 +16,25 @@
     }
   },
   "scripts": {
-    "commit": "bash ./commit.sh",
-    "dev": "concurrently --kill-others-on-fail \"yarn db start\"  \"yarn web dev\" \"yarn admin dev\"",
-    "postinstall": "husky install",
     "web": "yarn workspace @locadocs/web",
-    "admin": "yarn workspace admin",
+    "admin": "yarn workspace @locadocs/admin",
     "db": "yarn workspace @locadocs/local-database",
-    "type-check": "concurrently \"yarn shared tsc\" \"yarn web tsc\" \"yarn admin tsc\"",
+    "commit": "bash ./commit.sh",
+    "pre-commit": "lint-staged",
     "format": "prettier -w .",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "postinstall": "husky install",
+    "type-check": "concurrently \"yarn shared tsc\" \"yarn web tsc\" \"yarn admin tsc\"",
+    "dev": "concurrently --kill-others-on-fail \"yarn db start\"  \"yarn web dev\" \"yarn admin dev\"",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "packages/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+      "prettier --write"
+    ],
+    "packages/**/*.{js,mjs,cjs,jsx,ts,tsx}": [
+      "eslint"
+    ]
   },
   "packageManager": "yarn@3.0.1",
   "devDependencies": {
