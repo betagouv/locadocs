@@ -1,0 +1,1 @@
+export { StaticData } from './StaticData';

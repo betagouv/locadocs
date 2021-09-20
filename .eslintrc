@@ -98,7 +98,7 @@
       },
       {
         "selector": "property",
-        "format": ["camelCase"],
+        "format": ["camelCase", "UPPER_CASE"],
         "trailingUnderscore": "forbid"
       },
       {

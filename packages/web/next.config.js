@@ -104,6 +104,7 @@ module.exports = transpileModules({
       ...(config.resolve.alias || {}),
       '@components': path.resolve(__dirname, 'components'),
       '@constants': path.resolve(__dirname, 'constants'),
+      '@static-data': path.resolve(__dirname, 'static-data'),
       '@views': path.resolve(__dirname, 'views'),
     };
 

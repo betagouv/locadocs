@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import * as COLORS from '../../constants/colors';
 import * as WEIGHTS from '../../constants/fontWeights';
+import * as SPACINGS from '../../constants/spacings';
+import * as SIZES from '../../constants/fontSizes';
 
 export const Container = styled.footer`
   background-color: ${COLORS.WHITE};
@@ -11,7 +13,7 @@ export const Container = styled.footer`
     width: 100%;
     max-width: 110rem;
     margin: 0 auto;
-    padding: 3rem 2rem;
+    padding: ${SPACINGS.SPACING_6W} ${SPACINGS.SPACING_4W};
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -22,11 +24,11 @@ export const Container = styled.footer`
       align-items: center;
 
       > p {
-        margin-right: 5rem;
-        font-size: 2.1rem;
+        margin-right: ${SPACINGS.SPACING_10W};
+        font-size: ${SIZES.SIZE_H5};
         text-transform: uppercase;
         font-weight: ${WEIGHTS.BOLD};
-        line-height: 2.1rem;
+        line-height: ${SIZES.SIZE_H5};
         display: block;
 
         &::before {
@@ -89,7 +91,8 @@ export const Container = styled.footer`
     align-items: center;
     font-size: 1.2rem;
     color: ${COLORS.G500};
-    padding: 0 2rem 2rem 2rem;
+    padding: ${SPACINGS.SPACING_4W};
+    padding-top: 0;
     flex-wrap: wrap;
 
     &::before {
@@ -110,9 +113,9 @@ export const Container = styled.footer`
         content: '';
         display: block;
         width: 1px;
-        height: 2rem;
+        height: ${SPACINGS.SPACING_4W};
         background: ${COLORS.G300};
-        margin: 0 1.5rem;
+        margin: 0 ${SPACINGS.SPACING_3W};
       }
 
       &:last-of-type {
