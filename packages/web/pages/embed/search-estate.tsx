@@ -1,7 +1,7 @@
-import { EmptyAlayout } from '@components/Layouts';
+import { EmptyLayout } from '@components/Layouts';
 import * as React from 'react';
 import type { NextPage } from 'next';
 
-const About: NextPage = () => <EmptyAlayout>search estate</EmptyAlayout>;
+const About: NextPage = () => <EmptyLayout>search estate</EmptyLayout>;
 
 export default About;

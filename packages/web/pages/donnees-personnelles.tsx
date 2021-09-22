@@ -1,11 +1,11 @@
-import { SiteAlayout } from '@components/Layouts';
+import { SiteLayout } from '@components/Layouts';
 import { ContentPage } from '@locadocs/design-system/components/ContentPage';
 import * as React from 'react';
 import type { NextPage } from 'next';
 import * as TITLE from '@locadocs/design-system/components/Title';
 
 const PersonnalData: NextPage = () => (
-  <SiteAlayout>
+  <SiteLayout>
     <ContentPage>
       <TITLE.H1>Suivi d'audience et vie privée</TITLE.H1>
       <TITLE.H2>
@@ -50,7 +50,7 @@ const PersonnalData: NextPage = () => (
         .
       </p>
     </ContentPage>
-  </SiteAlayout>
+  </SiteLayout>
 );
 
 export default PersonnalData;

@@ -9,7 +9,7 @@ type TParams = {
   headParams?: THeadParams;
 };
 
-export const SiteAlayout: React.FC<TParams> = ({
+export const SiteLayout: React.FC<TParams> = ({
   children,
   headParams,
 }: TParams): JSX.Element => (

@@ -14,7 +14,7 @@ export enum ELinkKind {
 interface IButtonProps extends React.ButtonHTMLAttributes<HTMLAnchorElement> {
   className?: string;
   id?: string;
-  label: string;
+  label?: string;
   leftIcon?: string;
   rightIcon?: string;
   kind?: ELinkKind;
@@ -40,7 +40,7 @@ export const Link: React.FC<IButtonProps> = ({
     <NextLink href={href}>
       <Container {...props} className={computedClassName}>
         {leftIcon && <Icon path={leftIcon} />}
-        <span className={labelClassName}>{label}</span>
+        {label && <span className={labelClassName}>{label}</span>}
         {rightIcon && <Icon path={rightIcon} />}
       </Container>
     </NextLink>

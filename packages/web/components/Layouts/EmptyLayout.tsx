@@ -7,7 +7,7 @@ type TParams = {
   headParams?: THeadParams;
 };
 
-export const EmptyAlayout: React.FC<TParams> = ({
+export const EmptyLayout: React.FC<TParams> = ({
   children,
   headParams,
 }: TParams): JSX.Element => (

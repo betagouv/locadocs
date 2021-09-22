@@ -1,2 +1,2 @@
-export { SiteAlayout } from './SiteAlayout';
-export { EmptyAlayout } from './EmptyAlayout';
+export { SiteLayout } from './SiteLayout';
+export { EmptyLayout } from './EmptyLayout';

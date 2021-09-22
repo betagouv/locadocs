@@ -1,11 +1,11 @@
-import { SiteAlayout } from '@components/Layouts';
+import { SiteLayout } from '@components/Layouts';
 import { ContentPage } from '@locadocs/design-system/components/ContentPage';
 import * as React from 'react';
 import type { NextPage } from 'next';
 import * as TITLE from '@locadocs/design-system/components/Title';
 
 const Accessibility: NextPage = () => (
-  <SiteAlayout>
+  <SiteLayout>
     <ContentPage>
       <TITLE.H1>Déclaration d'accessibilité</TITLE.H1>
       <p>
@@ -23,7 +23,7 @@ const Accessibility: NextPage = () => (
         audité.
       </p>
     </ContentPage>
-  </SiteAlayout>
+  </SiteLayout>
 );
 
 export default Accessibility;
