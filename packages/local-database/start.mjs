@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /* eslint-disable @typescript-eslint/naming-convention */
 /* eslint-disable @typescript-eslint/no-empty-function */
 import { exec as execCallback, spawn } from 'child_process';
@@ -8,6 +9,7 @@ import { mkdir } from 'fs/promises';
 import { promisify } from 'util';
 import mongo from 'mongodb';
 
+console.info('Start Mongo');
 process.env.MONGO_URI = 'mongodb://localhost:3001';
 const exec = promisify(execCallback);
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -35,10 +37,12 @@ dbProcess.stderr.pipe(process.stderr);
 
 dbProcess.on('exit', () => {
   process.kill();
+  console.info('Stop Mongo');
 });
 
 process.on('exit', async () => {
   dbProcess.kill();
+  console.info('Stop Mongo');
 });
 
 for await (const line of createInterface({ input: dbProcess.stdout })) {
@@ -62,6 +66,34 @@ await Promise.all([
     .db('locadocs')
     .collection('users')
     .createIndexes([{ key: { email: 1 }, unique: true }]),
+  client
+    .db('locadocs')
+    .collection('cities')
+    .createIndexes([{ key: { inseeCode: 1 }, unique: true }]),
+  client
+    .db('locadocs')
+    .collection('cities')
+    .createIndexes([{ key: { postalCode: 1 }, unique: false }]),
+  client
+    .db('locadocs')
+    .collection('cities')
+    .createIndex(
+      {
+        name: 'text',
+        postalCode: 'text',
+        inseeCode: 'text',
+        subCities: 'text',
+      },
+      {
+        weights: {
+          name: 10,
+          postalCode: 5,
+          inseeCode: 5,
+          subCities: 5,
+        },
+        name: 'search',
+      },
+    ),
 ]);
 
 await client.close();

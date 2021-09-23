@@ -6,9 +6,11 @@
   "private": true,
   "main": "index.json",
   "dependencies": {
+    "csv-parse": "^4.16.3",
     "mongodb": "^4.1.2"
   },
   "scripts": {
-    "start": "node start.mjs"
+    "start": "node start.mjs",
+    "inject-cities": "node ./cities_script.mjs"
   }
 }
