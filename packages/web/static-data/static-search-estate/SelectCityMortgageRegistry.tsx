@@ -5,26 +5,26 @@ import * as TITLES from '@locadocs/design-system/components/Title';
 import { mdiArrowLeft } from '@mdi/js';
 import { routes } from './index';
 
-export const BeforeNotarizedDeed = (root: string): JSX.Element => {
+export const SelectCityMortgageRegistry = (root: string): JSX.Element => {
   const router = useRouter();
 
   return (
     <>
-      <TITLES.H1>Que souhaitez-vous faire&nbsp;?</TITLES.H1>
+      <TITLES.H1>Dans quelle ville se situe le bien&nbsp;</TITLES.H1>
 
       <Link
         href={`${root}`}
-        label="Consulter un acte notarié"
+        label="Consulter un permis de construire"
         kind={ELinkKind.SECONDARY}
       />
       <Link
-        href={`${root}/${routes.INFOS_NOTARIZED_DEED}`}
-        label="Avoir plus d'informations sur le contenu d'un acte notarié"
+        href={`${root}/${routes.INFOS_BUILDING_PERMIT}`}
+        label="Avoir plus d'informations sur le contenu d'un permis de construire"
         kind={ELinkKind.SECONDARY}
       />
       <Link
-        href={`${root}/${routes.WHO_CAN_GET_NOTARIZED_DEED}`}
-        label="Savoir qui a le droit de consulter un acte notarié"
+        href={`${root}/${routes.WHO_CAN_GET_BUILDING_PERMIT}`}
+        label="Savoir qui a le droit de consulter un permis de construire"
         kind={ELinkKind.SECONDARY}
       />
 

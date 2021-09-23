@@ -5,7 +5,7 @@ import * as TITLES from '@locadocs/design-system/components/Title';
 import { mdiArrowLeft } from '@mdi/js';
 import { routes } from './index';
 
-export const BeforeNotarizedDeed = (root: string): JSX.Element => {
+export const BeforeLandRegistry = (root: string): JSX.Element => {
   const router = useRouter();
 
   return (
@@ -14,17 +14,22 @@ export const BeforeNotarizedDeed = (root: string): JSX.Element => {
 
       <Link
         href={`${root}`}
-        label="Consulter un acte notarié"
+        label="Consulter un plan cadastral"
         kind={ELinkKind.SECONDARY}
       />
       <Link
-        href={`${root}/${routes.INFOS_NOTARIZED_DEED}`}
-        label="Avoir plus d'informations sur le contenu d'un acte notarié"
+        href={`${root}`}
+        label="Consulter la documentation cadastrale écrite"
         kind={ELinkKind.SECONDARY}
       />
       <Link
-        href={`${root}/${routes.WHO_CAN_GET_NOTARIZED_DEED}`}
-        label="Savoir qui a le droit de consulter un acte notarié"
+        href={`${root}/${routes.INFOS_LAND_REGISTRY}`}
+        label="Avoir plus d'informations sur le contenu du cadastre"
+        kind={ELinkKind.SECONDARY}
+      />
+      <Link
+        href={`${root}/${routes.WHO_CAN_GET_LAND_REGISTRY}`}
+        label="Savoir qui a le droit de consulter le cadastre"
         kind={ELinkKind.SECONDARY}
       />
 

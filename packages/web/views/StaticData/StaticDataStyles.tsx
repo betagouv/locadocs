@@ -42,7 +42,7 @@ export const Container = styled.div`
     height: ${SPACINGS.SPACING_4W};
   }
 
-  > ul {
+  ul {
     padding-left: 4rem;
   }
 

@@ -5,14 +5,14 @@ import * as TITLES from '@locadocs/design-system/components/Title';
 import { mdiArrowLeft } from '@mdi/js';
 import { routes } from './index';
 
-export const NotarizedDeedInfos = (root: string): JSX.Element => {
+export const InfosNotarizedDeed = (root: string): JSX.Element => {
   const router = useRouter();
 
   return (
     <>
-      <TITLES.H1>Que contient un acte notarié ?</TITLES.H1>
+      <TITLES.H1>Que contient un acte notarié&nbsp;?</TITLES.H1>
 
-      <p>L'acte de vente passé devant le notaire contient :</p>
+      <p>L'acte de vente passé devant le notaire contient&nbsp;:</p>
 
       <ul>
         <li>La date de l’acte</li>
@@ -20,9 +20,9 @@ export const NotarizedDeedInfos = (root: string): JSX.Element => {
         <li>Le nom du vendeur et de l'acquéreur</li>
         <li>La description et la localisation du bien</li>
         <li>
-          L’origine de la propriété du bien vendu : le nom du précédent vendeur,
-          le nom et le lieu de résidence du notaire devant lequel a été passé
-          l'acte précédent ainsi que la date de cet acte
+          L’origine de la propriété du bien vendu&nbsp;: le nom du précédent
+          vendeur, le nom et le lieu de résidence du notaire devant lequel a été
+          passé l'acte précédent ainsi que la date de cet acte
         </li>
         <li>Éventuellement, la présence de servitudes</li>
         <li>
@@ -36,6 +36,8 @@ export const NotarizedDeedInfos = (root: string): JSX.Element => {
         l'acte, également appelé "minute", est conservé dans les registres de
         l'étude notariale.
       </p>
+
+      <div className="spacer" />
 
       <p>
         <strong>

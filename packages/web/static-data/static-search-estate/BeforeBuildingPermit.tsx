@@ -10,15 +10,15 @@ export const BeforeBuildingPermit = (root: string): JSX.Element => {
 
   return (
     <>
-      <TITLES.H1>Que souhaitez-vous faire ?</TITLES.H1>
+      <TITLES.H1>Que souhaitez-vous faire&nbsp;?</TITLES.H1>
 
       <Link
-        href={`${root}`}
+        href={`${root}/${routes.SELECT_CITY_BUILDING_PERMIT}`}
         label="Consulter un permis de construire"
         kind={ELinkKind.SECONDARY}
       />
       <Link
-        href={`${root}/${routes.BUILDING_PERMIT_INFOS}`}
+        href={`${root}/${routes.INFOS_BUILDING_PERMIT}`}
         label="Avoir plus d'informations sur le contenu d'un permis de construire"
         kind={ELinkKind.SECONDARY}
       />

@@ -10,7 +10,7 @@ export const BeforeMortgageRegistry = (root: string): JSX.Element => {
 
   return (
     <>
-      <TITLES.H1>Que souhaitez-vous faire ?</TITLES.H1>
+      <TITLES.H1>Que souhaitez-vous faire&nbsp;?</TITLES.H1>
 
       <Link
         href={`${root}`}
@@ -18,7 +18,7 @@ export const BeforeMortgageRegistry = (root: string): JSX.Element => {
         kind={ELinkKind.SECONDARY}
       />
       <Link
-        href={`${root}/${routes.MORTGAGE_REGISTRY_INFOS}`}
+        href={`${root}/${routes.INFOS_MORTGAGE_REGISTRY}`}
         label="Avoir plus d'informations sur le contenu d'un registre des hypothèques"
         kind={ELinkKind.SECONDARY}
       />

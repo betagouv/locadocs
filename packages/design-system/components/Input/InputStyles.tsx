@@ -11,7 +11,8 @@ export const Container = styled.div`
       color: ${COLORS.SUCCESS};
     }
 
-    > input {
+    > input,
+    > textarea {
       border-bottom: 2px solid ${COLORS.SUCCESS};
       &:focus {
         border-bottom: 2px solid ${COLORS.SUCCESS};
@@ -24,7 +25,8 @@ export const Container = styled.div`
       color: ${COLORS.ERROR};
     }
 
-    > input {
+    > input,
+    > textarea {
       border-bottom: 2px solid ${COLORS.ERROR};
       &:focus {
         border-bottom: 2px solid ${COLORS.ERROR};
@@ -42,7 +44,12 @@ export const Container = styled.div`
     }
   }
 
-  > input {
+  > textarea {
+    min-height: 10rem;
+  }
+
+  > input,
+  > textarea {
     display: block;
     width: 100%;
     border: none;

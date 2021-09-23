@@ -19,7 +19,7 @@ const About: NextPage = () => (
       <p>À remplir.</p>
       <TITLE.H2>Copyright</TITLE.H2>
       <p>À remplir.</p>
-      <TITLE.H2>Plus d’infos ?</TITLE.H2>
+      <TITLE.H2>Plus d’infos&nbsp;?</TITLE.H2>
       <p>À remplir.</p>
     </ContentPage>
 

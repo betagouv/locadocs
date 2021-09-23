@@ -10,7 +10,7 @@ export const WhoCanGetBuildingPermit = (root: string): JSX.Element => {
 
   return (
     <>
-      <TITLES.H1>Qui peut consulter un permis de construire ?</TITLES.H1>
+      <TITLES.H1>Qui peut consulter un permis de construire&nbsp;?</TITLES.H1>
 
       <p>
         Les dossiers de permis de construire sont communicables à toute

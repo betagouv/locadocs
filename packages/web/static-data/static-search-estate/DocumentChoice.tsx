@@ -10,7 +10,7 @@ export const DocumentChoice = (root: string): JSX.Element => {
 
   return (
     <>
-      <TITLES.H1>Quel document cherchez-vous ?</TITLES.H1>
+      <TITLES.H1>Quel document cherchez-vous&nbsp;?</TITLES.H1>
 
       <Link
         href={`${root}/${routes.BEFORE_BUILDING_PERMIT}`}
@@ -23,17 +23,17 @@ export const DocumentChoice = (root: string): JSX.Element => {
         kind={ELinkKind.SECONDARY}
       />
       <Link
-        href={`${root}`}
+        href={`${root}/${routes.BEFORE_MORTGAGE_REGISTRY}`}
         label="Je cherche un registre des hypothèques"
         kind={ELinkKind.SECONDARY}
       />
       <Link
-        href={`${root}`}
+        href={`${root}/${routes.BEFORE_LAND_REGISTRY}`}
         label="Je cherche le cadastre"
         kind={ELinkKind.SECONDARY}
       />
       <Link
-        href={`${root}`}
+        href={`${root}/${routes.SUGGEST_DOCUMENT}`}
         label="Je cherche un autre document"
         kind={ELinkKind.SECONDARY}
       />

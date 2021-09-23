@@ -10,14 +10,14 @@ export const WhoCanGetNotarizedDeed = (root: string): JSX.Element => {
 
   return (
     <>
-      <TITLES.H1>Qui peut consulter un acte notarié ?</TITLES.H1>
+      <TITLES.H1>Qui peut consulter un acte notarié&nbsp;?</TITLES.H1>
 
       <p>
         Les registres et minutes de notaires sont librement communicables à tous
         au-delà d'un délai de 75 ans.
       </p>
 
-      <p>Avant l'échéance du délai de 75 ans :</p>
+      <p>Avant l'échéance du délai de 75 ans&nbsp;:</p>
       <ul>
         <li>
           Les parties ainsi que leurs héritiers et ayants droit ont accès à
