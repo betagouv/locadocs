@@ -41,4 +41,15 @@ export const Container = styled.div`
   > .spacer {
     height: ${SPACINGS.SPACING_4W};
   }
+
+  > ul {
+    padding-left: 4rem;
+  }
+
+  > blockquote {
+    background-color: ${COLORS.BLUE_FRANCE_100};
+    border-left: 4px solid ${COLORS.BLUE_FRANCE_300};
+    border-radius: 3px;
+    padding: ${SPACINGS.SPACING_3W} ${SPACINGS.SPACING_4W};
+  }
 `;

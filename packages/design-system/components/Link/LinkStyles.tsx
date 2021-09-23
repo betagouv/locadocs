@@ -13,6 +13,7 @@ export const Container = styled.a`
   line-height: ${SPACINGS.SPACING_3W};
   min-height: ${SPACINGS.SPACING_9W};
   width: fit-content;
+  text-decoration: none;
 
   &.primary {
     color: ${COLORS.WHITE};

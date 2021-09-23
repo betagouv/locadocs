@@ -38,7 +38,7 @@ export const Link: React.FC<IButtonProps> = ({
 
   return (
     <NextLink href={href}>
-      <Container {...props} className={computedClassName}>
+      <Container {...props} className={computedClassName} href={href}>
         {leftIcon && <Icon path={leftIcon} />}
         {label && <span className={labelClassName}>{label}</span>}
         {rightIcon && <Icon path={rightIcon} />}

@@ -13,7 +13,7 @@ export enum EButtonKind {
 interface IButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
   id?: string;
-  label: string;
+  label?: string;
   leftIcon?: string;
   rightIcon?: string;
   kind?: EButtonKind;
@@ -36,7 +36,7 @@ export const Button: React.FC<IButtonProps> = ({
   return (
     <Container {...props} className={computedClassName}>
       {leftIcon && <Icon path={leftIcon} />}
-      <span className={labelClassName}>{label}</span>
+      {label && <span className={labelClassName}>{label}</span>}
       {rightIcon && <Icon path={rightIcon} />}
     </Container>
   );

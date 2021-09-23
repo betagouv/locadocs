@@ -28,7 +28,7 @@ export const Home: React.FC<unknown> = (): JSX.Element => {
       </header>
 
       <section>
-        <TITLE.H2>Trouver un document foncier</TITLE.H2>
+        <TITLE.H2>Trouver un document sur un bien immobilier</TITLE.H2>
 
         <p>
           Vous cherchez <strong>un document ou une information</strong> sur{' '}
