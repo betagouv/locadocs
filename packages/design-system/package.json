@@ -2,7 +2,7 @@
   "name": "@locadocs/design-system",
   "version": "0.1.0",
   "private": true,
-  "main": "index.ts",
+  "main": "index.json",
   "scripts": {},
   "dependencies": {
     "@mdi/js": "^6.1.95",

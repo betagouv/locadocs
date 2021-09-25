@@ -1,10 +1,15 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "lib": ["dom", "ESNext"],
-    "allowJs": true,
-    "baseUrl": "."
+    /* Because we don't want tsc to mess with our jsx templates */
+    "jsx": "preserve",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    /* A series of entries which re-map imports to lookup locations relative to the 'baseUrl'. */
+    "baseUrl": ".",
+    "paths": {
+      "@utils/*": ["./utils/*"]
+    }
   },
-  "include": ["constants", "components", "utils"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
 }

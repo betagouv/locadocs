@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@locadocs/design-system": "*",
+    "@locadocs/shared": "*",
     "@mdi/js": "^6.1.95",
     "@mdi/react": "^1.5.0",
     "@types/styled-components": "^5.1.14",

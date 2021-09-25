@@ -3,6 +3,7 @@
 const path = require('path');
 const transpileModules = require('next-transpile-modules')([
   '@locadocs/design-system',
+  '@locadocs/shared',
 ]);
 const isDev = process.env.NODE_ENV === 'development';
 // Set the default headers management
