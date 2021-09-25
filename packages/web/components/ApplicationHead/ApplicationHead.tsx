@@ -12,7 +12,7 @@ export type THeadParams = {
   title?: string;
 };
 
-const rootDomain = 'https://locadocs.betagouv.fr';
+const rootDomain = 'https://locadocs.beta.gouv.fr/';
 const defaultDescription =
   'Locadocs, localisez simplement vos documents administratifs.';
 const defaultLanguage = 'fr-FR';

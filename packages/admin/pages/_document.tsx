@@ -1,4 +1,4 @@
-import Document from 'next/document';
+import Document, { Html, Head, Main, NextScript } from 'next/document';
 import type { DocumentContext, DocumentInitialProps } from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
 import type { RenderPageResult } from 'next/dist/shared/lib/utils';
@@ -30,5 +30,17 @@ export default class MyDocument extends Document {
     } finally {
       sheet.seal();
     }
+  }
+
+  public render(): JSX.Element {
+    return (
+      <Html lang="fr">
+        <Head></Head>
+        <body>
+          <Main />
+          <NextScript />
+        </body>
+      </Html>
+    );
   }
 }

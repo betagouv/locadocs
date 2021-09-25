@@ -22,6 +22,7 @@ export const Container = styled.footer`
     > div {
       display: flex;
       align-items: center;
+      pointer-events: none;
 
       > p {
         margin-right: ${SPACINGS.SPACING_10W};

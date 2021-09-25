@@ -23,7 +23,10 @@ export const Home: React.FC<unknown> = (): JSX.Element => {
             </ul>
           </div>
 
-          <img src="/imgs/home_illustration.svg" />
+          <img
+            src="/imgs/home_illustration.svg"
+            alt="woman searching for a file"
+          />
         </div>
       </header>
 

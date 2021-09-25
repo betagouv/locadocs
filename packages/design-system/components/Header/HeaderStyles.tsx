@@ -22,6 +22,7 @@ export const Container = styled.header`
     > div {
       display: flex;
       align-items: center;
+      pointer-events: none;
 
       > p {
         margin-right: ${SPACINGS.SPACING_12W};
