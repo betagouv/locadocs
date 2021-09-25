@@ -22,9 +22,9 @@ export const Container = styled.footer`
     > div {
       display: flex;
       align-items: center;
-      pointer-events: none;
 
       > p {
+        pointer-events: none;
         margin-right: ${SPACINGS.SPACING_10W};
         font-size: ${SIZES.SIZE_H5};
         text-transform: uppercase;
@@ -91,7 +91,7 @@ export const Container = styled.footer`
     display: flex;
     align-items: center;
     font-size: 1.2rem;
-    color: ${COLORS.G500};
+    color: ${COLORS.G700};
     padding: ${SPACINGS.SPACING_4W};
     padding-top: 0;
     flex-wrap: wrap;
@@ -102,13 +102,13 @@ export const Container = styled.footer`
       width: 100%;
       content: '';
       width: 100%;
-      margin-bottom: 0.5rem;
     }
 
     > a {
       text-decoration: none;
       display: flex;
-      padding: 0.5rem 0;
+      height: ${SPACINGS.SPACING_FINGER};
+      align-items: center;
 
       &:after {
         content: '';

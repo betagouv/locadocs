@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import * as BREAKPOINTS from '../../constants/breakpoints';
 import * as COLORS from '../../constants/colors';
 import * as SPACINGS from '../../constants/spacings';
 import * as SIZES from '../../constants/fontSizes';
@@ -21,10 +22,16 @@ export const Container = styled.header`
 
     > div {
       display: flex;
-      align-items: center;
-      pointer-events: none;
+      align-items: flex-start;
+      flex-direction: column;
+
+      @media (min-width: ${BREAKPOINTS.MD}) {
+        align-items: center;
+        flex-direction: row;
+      }
 
       > p {
+        pointer-events: none;
         margin-right: ${SPACINGS.SPACING_12W};
         font-size: ${SIZES.SIZE_XS};
         text-transform: uppercase;
@@ -69,6 +76,11 @@ export const Container = styled.header`
         font-weight: ${WEIGHTS.BOLD};
         font-size: ${SIZES.SIZE_H6};
         text-decoration: none;
+        padding-top: ${SPACINGS.SPACING_4W};
+
+        @media (min-width: ${BREAKPOINTS.MD}) {
+          padding-top: 0;
+        }
 
         > span {
           display: block;

@@ -10,7 +10,7 @@ export const Container = styled.button`
   appearance: none;
   border: none;
   cursor: pointer;
-  line-height: ${SPACINGS.SPACING_3W};
+  line-height: ${SPACINGS.SPACING_4W};
   min-height: ${SPACINGS.SPACING_9W};
   width: fit-content;
 

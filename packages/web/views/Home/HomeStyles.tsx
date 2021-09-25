@@ -7,6 +7,8 @@ export const Container = styled.div`
   padding-bottom: ${SPACINGS.SPACING_10W};
 
   > header {
+    width: 100%;
+
     > div {
       width: 100%;
       max-width: 110rem;
@@ -22,8 +24,6 @@ export const Container = styled.div`
       }
 
       > div {
-        min-width: 40rem;
-
         > h1 {
           margin-bottom: ${SPACINGS.SPACING_12W};
         }
@@ -35,7 +35,9 @@ export const Container = styled.div`
 
       > img {
         display: block;
-        width: 25rem;
+        max-width: 25rem;
+        width: 100%;
+        height: auto;
         margin: ${SPACINGS.SPACING_6W} auto;
 
         @media (min-width: ${BREAKPOINTS.MD}) {

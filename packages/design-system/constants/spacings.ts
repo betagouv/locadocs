@@ -22,3 +22,4 @@ export const SPACING_12W = '6rem';
 export const SPACING_13W = '6.5rem';
 export const SPACING_14W = '7rem';
 export const SPACING_15W = '7.5rem';
+export const SPACING_FINGER = '4.8rem';

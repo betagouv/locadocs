@@ -26,6 +26,8 @@ export const Home: React.FC<unknown> = (): JSX.Element => {
           <img
             src="/imgs/home_illustration.svg"
             alt="woman searching for a file"
+            width="578"
+            height="622"
           />
         </div>
       </header>

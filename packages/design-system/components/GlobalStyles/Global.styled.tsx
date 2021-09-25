@@ -108,6 +108,7 @@ export const SGlobals = createGlobalStyle`
   }
 
   body {
+    width: 100%;
     font-size: ${SIZES.SIZE_NORMAL};
     line-height: 1.5;
     font-family: Marianne, ui-sans-serif, system-ui, -apple-system,

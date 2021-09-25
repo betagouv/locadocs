@@ -14,7 +14,7 @@ export const WebFooter: React.FC<unknown> = (): JSX.Element => {
           href: ROUTES.PERSONNAL_DATA,
         },
         {
-          label: 'Accessibilité: non conforme',
+          label: 'Accessibilité : non conforme',
           href: ROUTES.ACCESSIBILITE,
         },
       ]}
