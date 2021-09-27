@@ -1,7 +1,7 @@
 import React from 'react';
 import * as TITLE from '@locadocs/design-system/components/Title';
 import { Link } from '@locadocs/design-system/components/Link';
-import { Container } from './HomeStyles';
+import { Container } from './Home.styled';
 import { mdiArrowRight } from '@mdi/js';
 import * as ROUTES from '@constants/routes';
 

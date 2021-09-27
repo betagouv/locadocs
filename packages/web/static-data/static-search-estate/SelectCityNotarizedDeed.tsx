@@ -10,7 +10,7 @@ export const SelectCityNotarizedDeed = (root: string): JSX.Element => {
 
   return (
     <>
-      <TITLES.H1>Dans quelle ville se situe le bien&nbsp;</TITLES.H1>
+      <TITLES.H1>Dans quelle ville se situe le bien&nbsp;?</TITLES.H1>
 
       <Link
         href={`${root}`}
