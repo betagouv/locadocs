@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Container } from './HeaderStyles';
+import { Container } from './Header.styled';
 
 type THeader = {
   baseLine?: string;

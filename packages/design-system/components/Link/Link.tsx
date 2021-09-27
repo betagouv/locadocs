@@ -2,7 +2,7 @@ import NextLink from 'next/link';
 import React from 'react';
 import Icon from '@mdi/react';
 
-import { Container } from './LinkStyles';
+import { Container } from './Link.styled';
 import { computeClassnames } from '../../utils/computeClassnames';
 
 export enum ELinkKind {

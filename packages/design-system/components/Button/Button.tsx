@@ -1,7 +1,7 @@
 import React from 'react';
 import Icon from '@mdi/react';
 
-import { Container } from './ButtonStyles';
+import { Container } from './Button.styled';
 import { computeClassnames } from '../../utils/computeClassnames';
 
 export enum EButtonKind {

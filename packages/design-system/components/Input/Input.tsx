@@ -2,7 +2,7 @@ import React from 'react';
 import Icon from '@mdi/react';
 import { mdiAlertOutline, mdiCheckCircleOutline } from '@mdi/js';
 
-import { Container } from './InputStyles';
+import { Container } from './Input.styled';
 import { computeClassnames } from '../../utils/computeClassnames';
 
 type IInput = {
@@ -48,7 +48,8 @@ export const Input: React.FC<IInput> = ({
       {isTextArea ? (
         <textarea
           {...(inputProps as React.HTMLProps<HTMLTextAreaElement>)}
-          id={localId}></textarea>
+          id={localId}
+        ></textarea>
       ) : (
         <input
           {...(inputProps as React.HTMLProps<HTMLInputElement>)}

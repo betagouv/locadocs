@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container } from './StaticDataStyles';
+import { Container } from './StaticData.styled';
 
 type TParams = {
   children: React.ReactNode;

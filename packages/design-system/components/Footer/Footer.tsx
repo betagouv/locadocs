@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Container } from './FooterStyles';
+import { Container } from './Footer.styled';
 
 type TFooter = {
   links: Array<{

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Container } from './LoginStyles';
+import { Container } from './Login.styled';
 import * as TITLE from '@locadocs/design-system/components/Title';
 import { Input } from '@locadocs/design-system/components/Input';
 import { Button } from '@locadocs/design-system/components/Button';
