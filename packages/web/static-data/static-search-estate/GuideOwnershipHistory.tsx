@@ -5,7 +5,9 @@ import * as TITLES from '@locadocs/design-system/components/Title';
 import { mdiArrowLeft } from '@mdi/js';
 import { routes } from '.';
 
-export const GuideOwnershipHistory = (root: string): JSX.Element => {
+export const GuideOwnershipHistory = (
+  buildRoute: (route: string) => string,
+): JSX.Element => {
   const router = useRouter();
 
   return (
@@ -36,22 +38,22 @@ export const GuideOwnershipHistory = (root: string): JSX.Element => {
       <div className="spacer" />
 
       <Link
-        href={`${root}/${routes.GUIDE_PROPERTY_DEED}`}
+        href={buildRoute(routes.GUIDE_PROPERTY_DEED)}
         label="Chercher un titre de propriété"
         kind={ELinkKind.SECONDARY}
       />
       <Link
-        href={`${root}/${routes.BEFORE_BUILDING_PERMIT}`}
+        href={buildRoute(routes.BEFORE_BUILDING_PERMIT)}
         label="Consulter un acte notarié"
         kind={ELinkKind.SECONDARY}
       />
       <Link
-        href={`${root}/${routes.BEFORE_MORTGAGE_REGISTRY}`}
+        href={buildRoute(routes.BEFORE_MORTGAGE_REGISTRY)}
         label="Consulter un registre des hypothèques"
         kind={ELinkKind.SECONDARY}
       />
       <Link
-        href={`${root}/${routes.BEFORE_LAND_REGISTRY}`}
+        href={buildRoute(routes.BEFORE_LAND_REGISTRY)}
         label="Consulter le cadastre"
         kind={ELinkKind.SECONDARY}
       />

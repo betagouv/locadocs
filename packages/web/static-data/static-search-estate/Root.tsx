@@ -5,7 +5,7 @@ import * as TITLES from '@locadocs/design-system/components/Title';
 import { routes } from './index';
 import { mdiArrowLeft } from '@mdi/js';
 
-export const Root = (root: string): JSX.Element => {
+export const Root = (buildRoute: (route: string) => string): JSX.Element => {
   const router = useRouter();
 
   return (
@@ -19,12 +19,12 @@ export const Root = (root: string): JSX.Element => {
       </p>
       <div className="spacer" />
       <Link
-        href={`${root}/${routes.DOCUMENT_CHOICE}`}
+        href={buildRoute(routes.DOCUMENT_CHOICE)}
         label="Oui, j’ai identifié le document"
         kind={ELinkKind.SECONDARY}
       />
       <Link
-        href={`${root}/${routes.WHAT_ARE_YOU_LOOKING_FOR}`}
+        href={buildRoute(routes.WHAT_ARE_YOU_LOOKING_FOR)}
         label="Non, j’ai besoin d’être guidé"
         kind={ELinkKind.SECONDARY}
       />

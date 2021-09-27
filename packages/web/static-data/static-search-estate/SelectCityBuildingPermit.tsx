@@ -4,10 +4,12 @@ import { Button, EButtonKind } from '@locadocs/design-system/components/Button';
 import * as TITLES from '@locadocs/design-system/components/Title';
 import { mdiArrowLeft } from '@mdi/js';
 
-export const SelectCityBuildingPermit = (root: string): JSX.Element => {
+export const SelectCityBuildingPermit = (
+  buildRoute: (route: string) => string,
+): JSX.Element => {
   const router = useRouter();
   const buildLink = (cityCode: string): string => {
-    return `${cityCode}${root}/building-permit-data`;
+    return buildRoute('building-permit') + `/${cityCode}`;
   };
 
   return (

@@ -5,7 +5,9 @@ import * as TITLES from '@locadocs/design-system/components/Title';
 import { mdiArrowLeft } from '@mdi/js';
 import { routes } from './index';
 
-export const InfosMortgageRegistry = (root: string): JSX.Element => {
+export const InfosMortgageRegistry = (
+  buildRoute: (route: string) => string,
+): JSX.Element => {
   const router = useRouter();
 
   return (
@@ -63,12 +65,12 @@ export const InfosMortgageRegistry = (root: string): JSX.Element => {
       <div className="spacer" />
 
       <Link
-        href={`${root}`}
+        href={buildRoute('')}
         label="Oui, je souhaite poursuivre"
         kind={ELinkKind.SECONDARY}
       />
       <Link
-        href={`${root}/${routes.DEAD_END}`}
+        href={buildRoute(routes.DEAD_END)}
         label="Non, ce document ne correspond pas à ma recherche"
         kind={ELinkKind.SECONDARY}
       />

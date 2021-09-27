@@ -26,7 +26,7 @@ Required :
 
 You need to add the database of french cities. The dataset comes from here : https://www.data.gouv.fr/fr/datasets/base-officielle-des-codes-postaux/.
 
-To inject the data in your local database, you must run the script with yarn inject-cities from the local-databse package. This injection must also be done in the production database. An updated if the cities list change.
+To inject the data in your local database, you must run the script with `yarn inject-cities` from the local-database package. This injection must also be done in the production database. An updated if the cities list change.
 
 ### Commit your work
 

@@ -5,7 +5,9 @@ import * as TITLES from '@locadocs/design-system/components/Title';
 import { mdiArrowLeft } from '@mdi/js';
 import { routes } from './index';
 
-export const BeforeLandRegistry = (root: string): JSX.Element => {
+export const BeforeLandRegistry = (
+  buildRoute: (route: string) => string,
+): JSX.Element => {
   const router = useRouter();
 
   return (
@@ -13,22 +15,22 @@ export const BeforeLandRegistry = (root: string): JSX.Element => {
       <TITLES.H1>Que souhaitez-vous faire&nbsp;?</TITLES.H1>
 
       <Link
-        href={`${root}`}
+        href={buildRoute('')}
         label="Consulter un plan cadastral"
         kind={ELinkKind.SECONDARY}
       />
       <Link
-        href={`${root}`}
+        href={buildRoute('')}
         label="Consulter la documentation cadastrale écrite"
         kind={ELinkKind.SECONDARY}
       />
       <Link
-        href={`${root}/${routes.INFOS_LAND_REGISTRY}`}
+        href={buildRoute(routes.INFOS_LAND_REGISTRY)}
         label="Avoir plus d'informations sur le contenu du cadastre"
         kind={ELinkKind.SECONDARY}
       />
       <Link
-        href={`${root}/${routes.WHO_CAN_GET_LAND_REGISTRY}`}
+        href={buildRoute(routes.WHO_CAN_GET_LAND_REGISTRY)}
         label="Savoir qui a le droit de consulter le cadastre"
         kind={ELinkKind.SECONDARY}
       />

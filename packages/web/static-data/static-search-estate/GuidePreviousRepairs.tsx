@@ -5,7 +5,9 @@ import * as TITLES from '@locadocs/design-system/components/Title';
 import { mdiArrowLeft } from '@mdi/js';
 import { routes } from '.';
 
-export const GuidePreviousRepairs = (root: string): JSX.Element => {
+export const GuidePreviousRepairs = (
+  buildRoute: (route: string) => string,
+): JSX.Element => {
   const router = useRouter();
 
   return (
@@ -28,7 +30,7 @@ export const GuidePreviousRepairs = (root: string): JSX.Element => {
 
       <div className="spacer" />
       <Link
-        href={`${root}/${routes.BEFORE_BUILDING_PERMIT}`}
+        href={buildRoute(routes.BEFORE_BUILDING_PERMIT)}
         label="Consulter un permis de construire"
         kind={ELinkKind.SECONDARY}
       />

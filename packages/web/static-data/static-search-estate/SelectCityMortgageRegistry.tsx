@@ -5,7 +5,9 @@ import * as TITLES from '@locadocs/design-system/components/Title';
 import { mdiArrowLeft } from '@mdi/js';
 import { routes } from './index';
 
-export const SelectCityMortgageRegistry = (root: string): JSX.Element => {
+export const SelectCityMortgageRegistry = (
+  buildRoute: (route: string) => string,
+): JSX.Element => {
   const router = useRouter();
 
   return (
@@ -13,17 +15,17 @@ export const SelectCityMortgageRegistry = (root: string): JSX.Element => {
       <TITLES.H1>Dans quelle ville se situe le bien&nbsp;?</TITLES.H1>
 
       <Link
-        href={`${root}`}
+        href={buildRoute('')}
         label="Consulter un permis de construire"
         kind={ELinkKind.SECONDARY}
       />
       <Link
-        href={`${root}/${routes.INFOS_BUILDING_PERMIT}`}
+        href={buildRoute(routes.INFOS_BUILDING_PERMIT)}
         label="Avoir plus d'informations sur le contenu d'un permis de construire"
         kind={ELinkKind.SECONDARY}
       />
       <Link
-        href={`${root}/${routes.WHO_CAN_GET_BUILDING_PERMIT}`}
+        href={buildRoute(routes.WHO_CAN_GET_BUILDING_PERMIT)}
         label="Savoir qui a le droit de consulter un permis de construire"
         kind={ELinkKind.SECONDARY}
       />

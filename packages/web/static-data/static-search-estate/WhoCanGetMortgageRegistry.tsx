@@ -5,7 +5,9 @@ import * as TITLES from '@locadocs/design-system/components/Title';
 import { mdiArrowLeft } from '@mdi/js';
 // import { routes } from './index';
 
-export const WhoCanGetMortgageRegistry = (root: string): JSX.Element => {
+export const WhoCanGetMortgageRegistry = (
+  buildRoute: (route: string) => string,
+): JSX.Element => {
   const router = useRouter();
 
   return (
@@ -29,7 +31,7 @@ export const WhoCanGetMortgageRegistry = (root: string): JSX.Element => {
 
       <div className="spacer" />
       <Link
-        href={`${root}`}
+        href={buildRoute('')}
         label="Je souhaite consulter un acte notarié"
         kind={ELinkKind.SECONDARY}
       />

@@ -5,7 +5,9 @@ import * as TITLES from '@locadocs/design-system/components/Title';
 import { mdiArrowLeft } from '@mdi/js';
 import { routes } from '.';
 
-export const GuideServitude = (root: string): JSX.Element => {
+export const GuideServitude = (
+  buildRoute: (route: string) => string,
+): JSX.Element => {
   const router = useRouter();
 
   return (
@@ -33,7 +35,7 @@ export const GuideServitude = (root: string): JSX.Element => {
 
       <div className="spacer" />
       <Link
-        href={`${root}/${routes.GUIDE_PROPERTY_DEED}`}
+        href={buildRoute(routes.GUIDE_PROPERTY_DEED)}
         label="Chercher un titre de propriété"
         kind={ELinkKind.SECONDARY}
       />

@@ -5,7 +5,9 @@ import * as TITLES from '@locadocs/design-system/components/Title';
 import { mdiArrowLeft } from '@mdi/js';
 import { routes } from '.';
 
-export const GuidePropertyLimitsAndArea = (root: string): JSX.Element => {
+export const GuidePropertyLimitsAndArea = (
+  buildRoute: (route: string) => string,
+): JSX.Element => {
   const router = useRouter();
 
   return (
@@ -40,12 +42,12 @@ export const GuidePropertyLimitsAndArea = (root: string): JSX.Element => {
       <div className="spacer" />
 
       <Link
-        href={`${root}/${routes.BEFORE_NOTARIZED_DEED}`}
+        href={buildRoute(routes.BEFORE_NOTARIZED_DEED)}
         label="Consulter un acte notarié"
         kind={ELinkKind.SECONDARY}
       />
       <Link
-        href={`${root}/${routes.BEFORE_LAND_REGISTRY}`}
+        href={buildRoute(routes.BEFORE_LAND_REGISTRY)}
         label="Consulter le cadastre"
         kind={ELinkKind.SECONDARY}
       />

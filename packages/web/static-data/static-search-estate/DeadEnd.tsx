@@ -5,7 +5,7 @@ import * as TITLES from '@locadocs/design-system/components/Title';
 import { mdiArrowLeft } from '@mdi/js';
 import { routes } from './index';
 
-export const DeadEnd = (root: string): JSX.Element => {
+export const DeadEnd = (buildRoute: (route: string) => string): JSX.Element => {
   const router = useRouter();
 
   return (
@@ -15,12 +15,12 @@ export const DeadEnd = (root: string): JSX.Element => {
       </TITLES.H1>
 
       <Link
-        href={`${root}/${routes.WHAT_ARE_YOU_LOOKING_FOR}`}
+        href={buildRoute(routes.WHAT_ARE_YOU_LOOKING_FOR)}
         label="Oui, indiquez-moi d'autres pistes"
         kind={ELinkKind.SECONDARY}
       />
       <Link
-        href={`${root}`}
+        href={buildRoute('')}
         label="Non, j'ai terminé. je donne mon avis pour améliorer l'outil"
         kind={ELinkKind.SECONDARY}
       />

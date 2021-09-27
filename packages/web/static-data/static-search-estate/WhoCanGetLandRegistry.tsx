@@ -5,7 +5,9 @@ import * as TITLES from '@locadocs/design-system/components/Title';
 import { mdiArrowLeft } from '@mdi/js';
 // import { routes } from './index';
 
-export const WhoCanGetLandRegistry = (root: string): JSX.Element => {
+export const WhoCanGetLandRegistry = (
+  buildRoute: (route: string) => string,
+): JSX.Element => {
   const router = useRouter();
 
   return (
@@ -36,12 +38,12 @@ export const WhoCanGetLandRegistry = (root: string): JSX.Element => {
       <div className="spacer" />
 
       <Link
-        href={`${root}`}
+        href={buildRoute('')}
         label="Consulter un plan cadastral"
         kind={ELinkKind.SECONDARY}
       />
       <Link
-        href={`${root}`}
+        href={buildRoute('')}
         label="Consulter la documentation cadastrale écrite"
         kind={ELinkKind.SECONDARY}
       />
