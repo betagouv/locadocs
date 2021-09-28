@@ -1,34 +1,23 @@
 import { useRouter } from 'next/router';
-import { ELinkKind, Link } from '@locadocs/design-system/components/Link';
+import { CityAutoComplete } from '@components/CityAutoComplete';
 import { Button, EButtonKind } from '@locadocs/design-system/components/Button';
 import * as TITLES from '@locadocs/design-system/components/Title';
 import { mdiArrowLeft } from '@mdi/js';
-import { routes } from './index';
+import { resultRoutes } from '.';
 
 export const SelectCityNotarizedDeed = (
   buildRoute: (route: string) => string,
 ): JSX.Element => {
   const router = useRouter();
+  const buildLink = (inseeCode: string): string => {
+    return buildRoute(`${resultRoutes.RESULT_NOTARIZED_DEED}/${inseeCode}`);
+  };
 
   return (
     <>
       <TITLES.H1>Dans quelle ville se situe le bien&nbsp;?</TITLES.H1>
 
-      <Link
-        href={buildRoute('')}
-        label="Consulter un permis de construire"
-        kind={ELinkKind.SECONDARY}
-      />
-      <Link
-        href={buildRoute(routes.INFOS_BUILDING_PERMIT)}
-        label="Avoir plus d'informations sur le contenu d'un permis de construire"
-        kind={ELinkKind.SECONDARY}
-      />
-      <Link
-        href={buildRoute(routes.WHO_CAN_GET_BUILDING_PERMIT)}
-        label="Savoir qui a le droit de consulter un permis de construire"
-        kind={ELinkKind.SECONDARY}
-      />
+      <CityAutoComplete buildLink={buildLink} />
 
       <div className="spacer" />
 

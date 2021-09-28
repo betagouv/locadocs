@@ -34,15 +34,24 @@ const searchEstate: NextPage = () => {
   const currentRoute = `${((query.pathElements || []) as Array<string>).join(
     '/',
   )}`;
-  const buildRoute = (route: string): string => {
+  const buildRoute = (
+    route: string,
+    targetQuery?: Record<string, string>,
+  ): string => {
     let result = `${ROUTES.ESTATE}/${route}`;
-    if (query && Object.keys(query).length > 0) {
+    const routeQuery = {
+      ...query,
+      ...targetQuery,
+    };
+    delete routeQuery.pathElements;
+    if (Object.keys(routeQuery).length > 0) {
       result += '?';
-      result += Object.entries(query)
-        .filter(([key]) => key !== 'pathElements')
+      result += Object.entries(routeQuery)
+        // .filter(([key]) => key !== 'pathElements')
         .map(([key, value]) => `${key}=${value}`)
         .join('&');
     }
+
     return result;
   };
 

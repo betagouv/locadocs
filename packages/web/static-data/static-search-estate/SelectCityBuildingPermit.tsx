@@ -3,13 +3,14 @@ import { CityAutoComplete } from '@components/CityAutoComplete';
 import { Button, EButtonKind } from '@locadocs/design-system/components/Button';
 import * as TITLES from '@locadocs/design-system/components/Title';
 import { mdiArrowLeft } from '@mdi/js';
+import { resultRoutes } from '.';
 
 export const SelectCityBuildingPermit = (
   buildRoute: (route: string) => string,
 ): JSX.Element => {
   const router = useRouter();
-  const buildLink = (cityCode: string): string => {
-    return buildRoute('building-permit') + `/${cityCode}`;
+  const buildLink = (inseeCode: string): string => {
+    return buildRoute(`${resultRoutes.RESULT_BUILDING_PERMIT}/${inseeCode}`);
   };
 
   return (
