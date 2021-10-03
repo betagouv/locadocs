@@ -1,0 +1,19 @@
+{
+  "name": "@locadocs/scrapper-mortgage-registry",
+  "version": "0.1.0",
+  "private": true,
+  "main": "./src/index.ts",
+  "module": "./src/index.ts",
+  "scripts": {
+    "scrap": "ts-node ./src/index.ts",
+    "test": "jest",
+    "type-check": "tsc"
+  },
+  "dependencies": {
+    "node-fetch": "^3.0.0",
+    "node-html-parser": "^4.1.5",
+    "ts-node": "^10.2.1",
+    "typescript": "^4.4.3"
+  },
+  "devDependencies": {}
+}
