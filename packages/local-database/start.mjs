@@ -64,6 +64,10 @@ const client = await mongo.MongoClient.connect('mongodb://localhost:3001', {
 await Promise.all([
   client
     .db('locadocs')
+    .collection('mortgageRegistries')
+    .createIndexes([{ key: { title: 1 }, unique: true }]),
+  client
+    .db('locadocs')
     .collection('users')
     .createIndexes([{ key: { email: 1 }, unique: true }]),
   client

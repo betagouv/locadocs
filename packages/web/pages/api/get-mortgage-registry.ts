@@ -9,12 +9,12 @@ export default async (
   request: NextApiRequest,
   response: NextApiResponse<Data>,
 ): Promise<void> => {
-  const { search } = request.query;
+  const { inseeCode } = request.query;
   const client = await connectToDb();
   const result = await client
     .db('locadocs')
-    .collection('cities')
-    .find({ $text: { $search: search as string } })
+    .collection('mortgageRegistries')
+    .find({ cities: inseeCode })
     .toArray();
 
   response.status(200).json({ result });
