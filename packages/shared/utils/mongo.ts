@@ -12,7 +12,7 @@ export async function connectToDb(): Promise<MongoClient> {
 
   if (!cached.promise) {
     cached.promise = MongoClient.connect(
-      process.env.MONGO_URI || ('http://localhost:3001' as string),
+      process.env.MONGO_URI || ('mongodb://localhost:3001' as string),
       {
         // useNewUrlParser: true,
         // useUnifiedTopology: true,
