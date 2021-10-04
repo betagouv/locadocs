@@ -13,8 +13,8 @@ export const Container = styled.div`
       align-items: center;
       text-decoration: none;
       justify-content: space-between;
-      padding: 0 ${SPACINGS.SPACING_4W};
-      height: ${SPACINGS.SPACING_FINGER};
+      padding: ${SPACINGS.SPACING_1W} ${SPACINGS.SPACING_4W};
+      min-height: ${SPACINGS.SPACING_FINGER};
       border-bottom: 1px solid ${COLORS.G400};
       transition: 200ms ease-out color, 200ms ease-out background-color;
 
@@ -26,6 +26,8 @@ export const Container = styled.div`
         transition: 200ms ease-out fill;
         display: block;
         width: ${SPACINGS.SPACING_4W};
+        flex-shrink: 0;
+        margin-left: ${SPACINGS.SPACING_4W};
       }
 
       &:hover {

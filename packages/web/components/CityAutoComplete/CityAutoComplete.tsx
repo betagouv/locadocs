@@ -5,13 +5,7 @@ import { Loader } from '@locadocs/design-system/components/Loader';
 import NextLink from 'next/link';
 import Icon from '@mdi/react';
 import { mdiArrowRight } from '@mdi/js';
-
-type TCity = {
-  inseeCode: string;
-  name: string;
-  postalCode: string;
-  subCities: Array<string>;
-};
+import type { City } from '@locadocs/shared/types/City';
 
 type TProps = {
   buildLink: (cityCode: string) => string;
@@ -20,7 +14,7 @@ type TProps = {
 export const CityAutoComplete: React.FC<TProps> = ({
   buildLink,
 }): JSX.Element => {
-  const [citiesFound, setCitiesFound] = React.useState<Array<TCity>>([]);
+  const [citiesFound, setCitiesFound] = React.useState<Array<City>>([]);
   const [isLoading, setIsLoading] = React.useState<boolean>(false);
   const [cityNotFound, setCityNotFound] = React.useState<boolean | string>(
     false,
@@ -46,6 +40,8 @@ export const CityAutoComplete: React.FC<TProps> = ({
       setIsLoading(false);
       if (!cities || cities.length === 0) {
         setCityNotFound(userInput);
+      } else {
+        setCityNotFound(false);
       }
     }, 200);
   };
@@ -53,14 +49,14 @@ export const CityAutoComplete: React.FC<TProps> = ({
   return (
     <Container>
       <Input
-        label="Entrez une ville"
-        inputProps={{ onChange }}
+        label="Entrez une ville, un code postal ou les deux"
+        inputProps={{ onChange, placeholder: 'ex: bagneux la fosse 10340' }}
         error={cityNotFound ? `Pas de ville pour ${cityNotFound}` : undefined}
       />
 
       {isLoading && <Loader />}
 
-      {citiesFound?.length > 0 && (
+      {!isLoading && citiesFound?.length > 0 && (
         <div className="results">
           {citiesFound.map(city => {
             let label = `${city.name}`;

@@ -20,7 +20,12 @@ export default async function getCities(
   const result = await client
     .db('locadocs')
     .collection('cities')
-    .find({ $text: { $search: search as string } })
+    .find(
+      { $text: { $search: search as string } },
+      { score: { $meta: 'textScore' } },
+    )
+    .sort({ score: { $meta: 'textScore' } })
+    .limit(25)
     .toArray();
 
   response.status(200).json({ result });
