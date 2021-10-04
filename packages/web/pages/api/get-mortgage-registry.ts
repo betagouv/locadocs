@@ -7,10 +7,10 @@ type Data = {
   error?: string;
 };
 
-export default async (
+export default async function getMortgageRegistry(
   request: NextApiRequest,
   response: NextApiResponse<Data>,
-): Promise<void> => {
+): Promise<void> {
   const { inseeCode } = request.query;
 
   if (!inseeCode) {
@@ -34,4 +34,4 @@ export default async (
     city: city as Document,
     mortgageRegistry: mortgageRegistry as Document,
   });
-};
+}

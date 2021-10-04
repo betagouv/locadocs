@@ -6,10 +6,10 @@ type Data = {
   error?: string;
 };
 
-export default async (
+export default async function getCities(
   request: NextApiRequest,
   response: NextApiResponse<Data>,
-): Promise<void> => {
+): Promise<void> {
   const { search } = request.query;
 
   if (!search) {
@@ -24,4 +24,4 @@ export default async (
     .toArray();
 
   response.status(200).json({ result });
-};
+}
