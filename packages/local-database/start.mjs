@@ -10,7 +10,6 @@ import { promisify } from 'util';
 import mongo from 'mongodb';
 
 console.info('Start Mongo');
-process.env.MONGO_URI = 'mongodb://localhost:3001';
 const exec = promisify(execCallback);
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
