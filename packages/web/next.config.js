@@ -68,7 +68,6 @@ module.exports = transpileModules({
             'accelerometer',
             'autoplay',
             'camera',
-            'document-domain',
             'encrypted-media',
             'fullscreen',
             'geolocation',
