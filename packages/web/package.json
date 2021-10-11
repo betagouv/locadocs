@@ -6,13 +6,14 @@
     "dev": "next -p 3000",
     "build": "next build",
     "export": "next build && next export",
-    "test": "jest",
     "type-check": "tsc",
     "start": "yarn build && cd out && ws -p 3010",
     "cypress": "cypress open",
     "cypress:headless": "cypress run",
     "e2e": "start-server-and-test start http://localhost:3000 cypress",
-    "e2e:headless": "start-server-and-test start http://localhost:3000 cypress:headless"
+    "e2e:headless": "start-server-and-test start http://localhost:3000 cypress:headless",
+    "test": "jest",
+    "test-watch": "jest --watch"
   },
   "dependencies": {
     "@locadocs/design-system": "*",
