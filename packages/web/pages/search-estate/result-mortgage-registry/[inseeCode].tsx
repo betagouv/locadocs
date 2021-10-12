@@ -9,6 +9,7 @@ import { useEffect, useState } from 'react';
 import { Loader } from '@locadocs/design-system/components/Loader';
 import type { City } from '@locadocs/shared/types/City';
 import type { MortgageRegistry } from '@locadocs/shared/types/MortgageRegistry';
+import { Questionnaire } from '@components/Questionnaire';
 
 const ResultBuildingPermit = (): JSX.Element => {
   let isMounted = true;
@@ -81,6 +82,8 @@ const ResultBuildingPermit = (): JSX.Element => {
           </>
         )}
       </StaticData>
+
+      <Questionnaire origin="result-mortgage-registry" />
     </SiteLayout>
   );
 };

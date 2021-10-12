@@ -15,6 +15,7 @@ export default async function getMortgageRegistry(
 
   if (!inseeCode) {
     response.status(406).json({ error: 'You must provide an inseeCode.' });
+    return;
   }
 
   const client = await connectToDb();
