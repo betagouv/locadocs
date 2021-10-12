@@ -7,13 +7,16 @@ export default async function getCities(
 ): Promise<void> {
   const { value, origin } = request.body;
   const client = await connectToDb();
-  await client.db('locadocs').collection('npsVotes').insertOne({
-    value,
-    origin,
-    userAgent: request.headers['user-agent'],
-    ip: request.connection.remoteAddress,
-    createdAt: new Date(),
-  });
+  await client
+    .db('locadocs')
+    .collection('npsVotes')
+    .insertOne({
+      value,
+      origin,
+      userAgent: request.headers['user-agent'],
+      ip: request.headers['x-real-ip'] || request.connection.remoteAddress,
+      createdAt: new Date(),
+    });
 
   response.status(200).send('ok');
 }

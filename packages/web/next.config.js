@@ -9,9 +9,11 @@ const isDev = process.env.NODE_ENV === 'development';
 // Set the default headers management
 const contentSecurityPolicy = Object.entries({
   'default-src': "'none'",
-  'connect-src': "'self'",
+  'connect-src': "'self' https://stats.data.gouv.fr",
   'prefetch-src': "'self'",
-  'script-src': isDev ? "'self' 'unsafe-inline' 'unsafe-eval'" : "'self'",
+  'script-src': isDev
+    ? "'self' 'unsafe-inline' 'unsafe-eval' https://stats.data.gouv.fr"
+    : "'self' https://stats.data.gouv.fr",
   'style-src': "'self' 'unsafe-inline'",
   'img-src': "'self' data:",
   sandbox: 'allow-scripts allow-same-origin allow-forms allow-downloads',

@@ -21,20 +21,20 @@ export const Questionnaire: React.FC<TProps> = ({
   const [isSaving, setIsSaving] = React.useState<boolean>(false);
   const [hasAnswered, setHasAnswered] = React.useState<boolean>(false);
 
-  const saveNPS = async (value: number) => {
-    setIsSaving(true);
-    await fetch(`/api/nps-vote`, {
-      method: 'POST',
-      cache: 'no-cache',
-      headers: {
-        // eslint-disable-next-line @typescript-eslint/naming-convention
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ value, origin }),
-    });
-    setIsSaving(false);
-    setHasAnswered(true);
-  };
+  // const saveNPS = async (value: number) => {
+  //   setIsSaving(true);
+  //   await fetch(`/api/nps-vote`, {
+  //     method: 'POST',
+  //     cache: 'no-cache',
+  //     headers: {
+  //       // eslint-disable-next-line @typescript-eslint/naming-convention
+  //       'Content-Type': 'application/json',
+  //     },
+  //     body: JSON.stringify({ value, origin }),
+  //   });
+  //   setIsSaving(false);
+  //   setHasAnswered(true);
+  // };
 
   const saveSatisfaction = async (value: number) => {
     setIsSaving(true);
@@ -53,7 +53,7 @@ export const Questionnaire: React.FC<TProps> = ({
 
   return (
     <Container>
-      <div className="nps">
+      {/* <div className="nps">
         {isSaving && <Loader />}
 
         {!isSaving && hasAnswered && <p>Merci pour votre réponse.</p>}
@@ -80,18 +80,23 @@ export const Questionnaire: React.FC<TProps> = ({
             </div>
           </>
         )}
-      </div>
+      </div> */}
 
       <div className="satisfaction">
         {isSaving && <Loader />}
 
         {!isSaving && hasAnswered && <p>Merci pour votre réponse.</p>}
 
+        {/**
+         * Vous avez une question, une remarque ou une suggestion d'amélioration de l'outil ?
+
+Faites-nous part de votre avis et aidez-nous à l'améliorer.
+         *
+         */}
+
         {!isSaving && !hasAnswered && (
           <>
-            <TITLES.H6>
-              Votre expérience a-t-elle été satisfaisante&nbsp;?
-            </TITLES.H6>
+            <TITLES.H6>Est-ce que Loc@docs vous a été utile&nbsp;?</TITLES.H6>
 
             <div>
               {[
