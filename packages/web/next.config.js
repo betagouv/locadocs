@@ -13,7 +13,7 @@ const contentSecurityPolicy = Object.entries({
   'prefetch-src': "'self'",
   'script-src': isDev
     ? "'self' 'unsafe-inline' 'unsafe-eval' https://stats.data.gouv.fr"
-    : "'self' https://stats.data.gouv.fr",
+    : "'self' 'unsafe-inline' https://stats.data.gouv.fr",
   'style-src': "'self' 'unsafe-inline'",
   'img-src': "'self' data:",
   sandbox: 'allow-scripts allow-same-origin allow-forms allow-downloads',
