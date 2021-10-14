@@ -5,6 +5,11 @@ import * as SIZES from '../../constants/fontSizes';
 
 export const Container = styled.div`
   padding: ${SPACINGS.SPACING_1W} 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  text-align: left;
 
   &.success {
     > label {

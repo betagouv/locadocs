@@ -1,8 +1,10 @@
 import React from 'react';
 import Icon from '@mdi/react';
 
+import * as COLORS from '../../constants/colors';
 import { Container } from './Button.styled';
 import { computeClassnames } from '../../utils/computeClassnames';
+import { Loader } from '../Loader';
 
 export enum EButtonKind {
   PRIMARY = 'primary',
@@ -13,18 +15,22 @@ export enum EButtonKind {
 interface IButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
   id?: string;
+  isLoading?: boolean;
+  kind?: EButtonKind;
   label?: string;
   leftIcon?: string;
   rightIcon?: string;
-  kind?: EButtonKind;
+  type?: 'submit' | 'reset' | 'button';
 }
 
 export const Button: React.FC<IButtonProps> = ({
   className,
+  isLoading,
+  kind = EButtonKind.PRIMARY,
   label,
   leftIcon,
   rightIcon,
-  kind = EButtonKind.PRIMARY,
+  type = 'button',
   ...props
 }: IButtonProps): JSX.Element => {
   const labelClassName = computeClassnames([
@@ -34,10 +40,16 @@ export const Button: React.FC<IButtonProps> = ({
   const computedClassName = computeClassnames([className, kind]);
 
   return (
-    <Container {...props} className={computedClassName}>
-      {leftIcon && <Icon path={leftIcon} />}
-      {label && <span className={labelClassName}>{label}</span>}
-      {rightIcon && <Icon path={rightIcon} />}
+    <Container type={type} {...props} className={computedClassName}>
+      {!isLoading && (
+        <>
+          {leftIcon && <Icon path={leftIcon} />}
+          {label && <span className={labelClassName}>{label}</span>}
+          {rightIcon && <Icon path={rightIcon} />}
+        </>
+      )}
+
+      {isLoading && <Loader color={COLORS.WHITE} width={20} />}
     </Container>
   );
 };

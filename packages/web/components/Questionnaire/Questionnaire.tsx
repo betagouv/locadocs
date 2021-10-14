@@ -8,8 +8,11 @@ import {
   mdiEmoticonExcitedOutline,
   mdiEmoticonHappyOutline,
   mdiEmoticonNeutralOutline,
+  mdiSend,
 } from '@mdi/js';
 import { Loader } from '@locadocs/design-system/components/Loader';
+import { Input } from '@locadocs/design-system/components/Input';
+import { Button } from '@locadocs/design-system/components/Button';
 
 type TProps = {
   origin: string;
@@ -20,21 +23,10 @@ export const Questionnaire: React.FC<TProps> = ({
 }: TProps): JSX.Element => {
   const [isSaving, setIsSaving] = React.useState<boolean>(false);
   const [hasAnswered, setHasAnswered] = React.useState<boolean>(false);
-
-  // const saveNPS = async (value: number) => {
-  //   setIsSaving(true);
-  //   await fetch(`/api/nps-vote`, {
-  //     method: 'POST',
-  //     cache: 'no-cache',
-  //     headers: {
-  //       // eslint-disable-next-line @typescript-eslint/naming-convention
-  //       'Content-Type': 'application/json',
-  //     },
-  //     body: JSON.stringify({ value, origin }),
-  //   });
-  //   setIsSaving(false);
-  //   setHasAnswered(true);
-  // };
+  const [isSubmittingComment, setIsSubmittingComment] =
+    React.useState<boolean>(false);
+  // const [hasSubmittedComment, setHasSubmittedComment] =
+  React.useState<boolean>(false);
 
   const saveSatisfaction = async (value: number) => {
     setIsSaving(true);
@@ -51,68 +43,91 @@ export const Questionnaire: React.FC<TProps> = ({
     setHasAnswered(true);
   };
 
+  const sendComment = async (
+    event: React.FormEvent<HTMLFormElement>,
+  ): Promise<void> => {
+    event.preventDefault();
+    const comment = (event.currentTarget.elements[0] as HTMLInputElement).value;
+
+    if (comment === '') {
+      return;
+    }
+
+    // console.log(comment);
+
+    setIsSubmittingComment(true);
+    // await fetch(`/api/satisfaction-vote`, {
+    //   method: 'POST',
+    //   cache: 'no-cache',
+    //   headers: {
+    //     // eslint-disable-next-line @typescript-eslint/naming-convention
+    //     'Content-Type': 'application/json',
+    //   },
+    //   body: JSON.stringify({ value, origin }),
+    // });
+    setIsSubmittingComment(false);
+    // setHasAnswered(true);
+  };
+
   return (
     <Container>
-      {/* <div className="nps">
-        {isSaving && <Loader />}
+      {isSaving && <Loader />}
 
-        {!isSaving && hasAnswered && <p>Merci pour votre réponse.</p>}
-
-        {!isSaving && !hasAnswered && (
-          <>
-            <TITLES.H6>
-              Suite à votre expérience, quelle est la probabilité que vous
-              recommandiez notre service à un ami ou un collègue.
-            </TITLES.H6>
-
-            <div>
-              <div>
-                <span>peu probable</span>
-                <span>fort probable</span>
-              </div>
-              <div>
-                {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(number => (
-                  <button key={number} onClick={() => saveNPS(number)}>
-                    {number}
-                  </button>
-                ))}
-              </div>
-            </div>
-          </>
-        )}
-      </div> */}
-
-      <div className="satisfaction">
-        {isSaving && <Loader />}
-
-        {!isSaving && hasAnswered && <p>Merci pour votre réponse.</p>}
-
-        {/**
+      {/**
          * Vous avez une question, une remarque ou une suggestion d'amélioration de l'outil ?
 
 Faites-nous part de votre avis et aidez-nous à l'améliorer.
          *
          */}
 
-        {!isSaving && !hasAnswered && (
-          <>
-            <TITLES.H6>Est-ce que Loc@docs vous a été utile&nbsp;?</TITLES.H6>
+      {!isSaving && !hasAnswered && (
+        <>
+          <TITLES.H6>Est-ce que Loc@docs vous a été utile&nbsp;?</TITLES.H6>
 
-            <div>
-              {[
-                [mdiEmoticonAngryOutline, COLORS.ERROR],
-                [mdiEmoticonNeutralOutline, COLORS.ORANGE_DARK],
-                [mdiEmoticonHappyOutline, COLORS.GREEN_LIGHT],
-                [mdiEmoticonExcitedOutline, COLORS.SUCCESS],
-              ].map(([icon, color], index) => (
-                <button key={index} onClick={() => saveSatisfaction(index)}>
-                  <Icon path={icon} color={color} />
-                </button>
-              ))}
-            </div>
-          </>
-        )}
-      </div>
+          <div className="buttonsContainer">
+            {[
+              [mdiEmoticonAngryOutline, COLORS.ERROR],
+              [mdiEmoticonNeutralOutline, COLORS.ORANGE_DARK],
+              [mdiEmoticonHappyOutline, COLORS.GREEN_LIGHT],
+              [mdiEmoticonExcitedOutline, COLORS.SUCCESS],
+            ].map(([icon, color], index) => (
+              <button key={index} onClick={() => saveSatisfaction(index)}>
+                <Icon path={icon} color={color} />
+              </button>
+            ))}
+          </div>
+        </>
+      )}
+
+      {!isSaving && hasAnswered && (
+        <>
+          <TITLES.H6>Merci pour votre réponse.</TITLES.H6>
+
+          <p>
+            Vous avez une question, une remarque ou une suggestion
+            d'amélioration de l'outil&nbsp;?
+            <br />
+            Faites-nous part de votre avis et aidez-nous à l'améliorer.
+          </p>
+
+          <form onSubmit={sendComment}>
+            <Input
+              isTextArea
+              inputProps={{
+                placeholder: 'Ce serait mieux si...',
+              }}
+              label="Vos suggestions"
+            />
+
+            <Button
+              label="Envoyer mon commentaire"
+              leftIcon={mdiSend}
+              isLoading={isSubmittingComment}
+              type="submit"
+            />
+          </form>
+        </>
+      )}
     </Container>
   );
 };
