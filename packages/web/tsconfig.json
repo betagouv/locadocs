@@ -10,6 +10,7 @@
       "@components/*": ["./components/*"],
       "@constants/*": ["./constants/*"],
       "@static/*": ["static-data/*"],
+      "@utils/*": ["./utils/*"],
       "@views/*": ["./views/*"]
     }
   },

@@ -107,6 +107,7 @@ module.exports = transpileModules({
       '@components': path.resolve(__dirname, 'components'),
       '@constants': path.resolve(__dirname, 'constants'),
       '@static-data': path.resolve(__dirname, 'static-data'),
+      '@utils': path.resolve(__dirname, 'utils'),
       '@views': path.resolve(__dirname, 'views'),
     };
 

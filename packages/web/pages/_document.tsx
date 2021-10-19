@@ -36,7 +36,7 @@ export default class MyDocument extends Document {
     return (
       <Html lang="fr">
         <Head></Head>
-        <script
+        {/* <script
           type="text/javascript"
           dangerouslySetInnerHTML={{
             // eslint-disable-next-line @typescript-eslint/naming-convention
@@ -54,7 +54,7 @@ export default class MyDocument extends Document {
             g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
           })();`,
           }}
-        />
+        /> */}
         <body>
           <Main />
           <NextScript />
