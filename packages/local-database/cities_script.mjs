@@ -21,7 +21,9 @@ for await (const record of parser) {
   }
 
   if (codeSet.has(inseeCode)) {
-    records[inseeCode].subCities.push(line5);
+    if (line5 && line5 !== '') {
+      records[inseeCode].subCities.push(line5);
+    }
   } else {
     codeSet.add(inseeCode);
 
