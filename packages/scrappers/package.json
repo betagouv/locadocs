@@ -5,7 +5,8 @@
   "main": "./src/index.ts",
   "module": "./src/index.ts",
   "scripts": {
-    "scrap": "ts-node ./src/index.ts",
+    "scrap-mortages-registries": "ts-node ./src/index.ts mortages-registries",
+    "scrap-district-archives": "ts-node ./src/index.ts --target=district-archives",
     "test": "jest",
     "type-check": "tsc"
   },
