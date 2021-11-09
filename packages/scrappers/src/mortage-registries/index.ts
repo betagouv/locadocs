@@ -142,7 +142,7 @@ const processDistrict = async (targetDistrict: {
   console.log(`DONE : ${targetDistrict.districtNumber}`);
 };
 
-(async () => {
+export const scrapMortageRegistries = async (): Promise<void> => {
   console.log('START');
 
   client = await connectToDb();
@@ -164,4 +164,4 @@ const processDistrict = async (targetDistrict: {
   }
 
   console.log('END');
-})();
+};
