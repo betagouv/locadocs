@@ -52,7 +52,9 @@ for await (const line of createInterface({ input: dbProcess.stdout })) {
   }
 }
 
-await exec(`mongo ${process.env.MONGO_URI} --eval "rs.initiate()"`);
+await exec(
+  `mongo mongodb://localhost:3001/?replicaSet=rs0 --eval "rs.initiate()"`,
+);
 
 const client = await mongo.MongoClient.connect('mongodb://localhost:3001', {
   useNewUrlParser: true,
