@@ -16,9 +16,6 @@ export const App = ({ Component, pageProps }: AppProps): JSX.Element => {
     const handleRouteChange = (): void => {
       if (window) {
         track({ actionName: 'pageView' });
-        // window._paq.push(['setCustomUrl', url]);
-        // window._paq.push(['setDocumentTitle', document.title]);
-        // window._paq.push(['trackPageView']);
       }
     };
 

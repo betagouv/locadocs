@@ -35,26 +35,7 @@ export default class MyDocument extends Document {
   public render(): JSX.Element {
     return (
       <Html lang="fr">
-        <Head></Head>
-        {/* <script
-          type="text/javascript"
-          dangerouslySetInnerHTML={{
-            // eslint-disable-next-line @typescript-eslint/naming-convention
-            __html: `var _paq = window._paq = window._paq || [];
-          _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
-          _paq.push(["setCookieDomain", "*.locadocs.beta.gouv.fr"]);
-          _paq.push(["setDomains", ["*.locadocs.beta.gouv.fr"]]);
-          _paq.push(['trackPageView']);
-          _paq.push(['enableLinkTracking']);
-          (function() {
-            var u="https://stats.data.gouv.fr/";
-            _paq.push(['setTrackerUrl', u+'matomo.php']);
-            _paq.push(['setSiteId', '202']);
-            var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-            g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
-          })();`,
-          }}
-        /> */}
+        <Head />
         <body>
           <Main />
           <NextScript />
