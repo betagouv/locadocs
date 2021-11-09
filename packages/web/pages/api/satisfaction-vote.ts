@@ -1,7 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { connectToDb } from '@locadocs/shared/utils/mongo';
 
-export default async function getCities(
+export default async function satisfactionVotes(
   request: NextApiRequest,
   response: NextApiResponse,
 ): Promise<void> {

@@ -29,7 +29,7 @@ const getRandomToken = (): string => {
   );
 };
 
-export default async function getCities(
+export default async function track(
   request: NextApiRequest,
   response: NextApiResponse,
 ): Promise<void> {
