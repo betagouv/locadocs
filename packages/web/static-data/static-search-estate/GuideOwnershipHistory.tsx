@@ -43,7 +43,7 @@ export const GuideOwnershipHistory = (
         kind={ELinkKind.SECONDARY}
       />
       <Link
-        href={buildRoute(routes.BEFORE_BUILDING_PERMIT)}
+        href={buildRoute(routes.BEFORE_NOTARIZED_DEED)}
         label="Consulter un acte notarié"
         kind={ELinkKind.SECONDARY}
       />

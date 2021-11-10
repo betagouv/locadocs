@@ -24,7 +24,7 @@ const ResultBuildingPermit = (): JSX.Element => {
     }
 
     const result = await fetch(
-      `/api/get-mortgage-registry?inseeCode=${inseeCode}`,
+      `/api/get-building-permit?inseeCode=${inseeCode}`,
     );
     const { city } = await result.json();
 

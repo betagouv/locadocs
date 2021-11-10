@@ -6,7 +6,7 @@ type Data = {
   error?: string;
 };
 
-export default async function getMortgageRegistry(
+export default async function getBuildingPermit(
   request: NextApiRequest,
   response: NextApiResponse<Data>,
 ): Promise<void> {
