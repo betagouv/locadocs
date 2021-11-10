@@ -3,12 +3,13 @@ import { ELinkKind, Link } from '@locadocs/design-system/components/Link';
 import { Button, EButtonKind } from '@locadocs/design-system/components/Button';
 import * as TITLES from '@locadocs/design-system/components/Title';
 import { mdiArrowLeft } from '@mdi/js';
-import { routes } from './index';
+import { resultRoutes, routes } from './index';
 
 export const InfosLandRegistry = (
   buildRoute: (route: string) => string,
 ): JSX.Element => {
   const router = useRouter();
+  const { inseeCode } = router.query;
 
   return (
     <>
@@ -85,12 +86,20 @@ export const InfosLandRegistry = (
       <div className="spacer" />
 
       <Link
-        href={buildRoute('')}
+        href={buildRoute(
+          inseeCode
+            ? `${resultRoutes.RESULT_LAND_REGISTRY}/${inseeCode}`
+            : routes.SELECT_CITY_LAND_REGISTRY,
+        )}
         label="Oui, je souhaite consulter un plan cadastral"
         kind={ELinkKind.SECONDARY}
       />
       <Link
-        href={buildRoute('')}
+        href={buildRoute(
+          inseeCode
+            ? `${resultRoutes.RESULT_LAND_REGISTRY_DOC}/${inseeCode}`
+            : routes.SELECT_CITY_LAND_REGISTRY_DOC,
+        )}
         label="Oui, je souhaite consulter la documentation cadastrale écrite"
         kind={ELinkKind.SECONDARY}
       />
