@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { SiteLayout } from '@components/Layouts';
 import { StaticData } from '@views/StaticData';
@@ -12,8 +12,8 @@ import { Loader } from '@locadocs/design-system/components/Loader';
 const ResultBuildingPermit = (): JSX.Element => {
   let isMounted = true;
   const router = useRouter();
-  const [isLoading, setIsLoading] = React.useState<boolean>(true);
-  const [city, setCity] = React.useState<City>();
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [city, setCity] = useState<City>();
 
   const loadData = async (): Promise<void> => {
     setIsLoading(true);
