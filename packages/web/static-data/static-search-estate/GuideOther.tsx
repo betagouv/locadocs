@@ -11,17 +11,18 @@ export const GuideOther = (): JSX.Element => {
     <>
       <TITLES.H1>Ma question n'est pas dans la liste</TITLES.H1>
 
-      <p>
-        Notre liste de questions n'est pas exhaustive, mais nous travaillons à
-        l'enrichir progressivement en nous appuyant sur les retours des usagers.
-      </p>
+      <div className="innerContainer">
+        <p>
+          Notre liste de questions n'est pas exhaustive, mais nous travaillons à
+          l'enrichir progressivement en nous appuyant sur les retours des
+          usagers.
+        </p>
 
-      <p>
-        Souhaitez-vous nous suggérer une nouvelle question à laquelle nous
-        n'aurions pas pensé ?
-      </p>
-
-      <div className="spacer" />
+        <p>
+          Souhaitez-vous nous suggérer une nouvelle question à laquelle nous
+          n'aurions pas pensé ?
+        </p>
+      </div>
 
       <Input
         isTextArea

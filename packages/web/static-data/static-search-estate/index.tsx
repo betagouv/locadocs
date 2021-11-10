@@ -17,11 +17,6 @@ import { InfosBuildingPermit } from './InfosBuildingPermit';
 import { InfosLandRegistry } from './InfosLandRegistry';
 import { InfosMortgageRegistry } from './InfosMortgageRegistry';
 import { InfosNotarizedDeed } from './InfosNotarizedDeed';
-// import { ResultBuildingPermit } from './ResultBuildingPermit';
-// import { ResultLandRegistry } from './ResultLandRegistry';
-// import { ResultLandRegistryDoc } from './ResultLandRegistryDoc';
-// import { ResultMortgageRegistry } from './ResultMortgageRegistry';
-// import { ResultNotarizedDeed } from './ResultNotarizedDeed';
 import { Root } from './Root';
 import { SelectCityBuildingPermit } from './SelectCityBuildingPermit';
 import { SelectCityLandRegistry } from './SelectCityLandRegistry';
@@ -102,11 +97,6 @@ export const ROUTES_CONTENT = {
   [routes.INFOS_LAND_REGISTRY]: InfosLandRegistry,
   [routes.INFOS_MORTGAGE_REGISTRY]: InfosMortgageRegistry,
   [routes.INFOS_NOTARIZED_DEED]: InfosNotarizedDeed,
-  // [routes.RESULT_BUILDING_PERMIT]: ResultBuildingPermit,
-  // [routes.RESULT_LAND_REGISTRY_DOC]: ResultLandRegistryDoc,
-  // [routes.RESULT_LAND_REGISTRY]: ResultLandRegistry,
-  // [routes.RESULT_MORTGAGE_REGISTRY]: ResultMortgageRegistry,
-  // [routes.RESULT_NOTARIZED_DEED]: ResultNotarizedDeed,
   [routes.ROOT]: Root,
   [routes.SELECT_CITY_BUILDING_PERMIT]: SelectCityBuildingPermit,
   [routes.SELECT_CITY_LAND_REGISTRY_DOC]: SelectCityLandRegistryDoc,

@@ -9,7 +9,13 @@ export const Container = styled.div`
   margin: 0 auto;
   padding: ${SPACINGS.SPACING_6W} ${SPACINGS.SPACING_4W};
 
-  > .baseLine {
+  .innerContainer {
+    margin-bottom: ${SPACINGS.SPACING_10W};
+    padding-left: ${SPACINGS.SPACING_4W};
+    border-left: 4px solid ${COLORS.BLUE_FRANCE_500};
+  }
+
+  .baseLine {
     color: ${COLORS.G500};
     font-size: ${SIZES.SIZE_XS};
 
@@ -23,18 +29,18 @@ export const Container = styled.div`
     }
   }
 
-  > h1,
-  > h2,
-  > h3,
-  > h4,
-  > h5,
-  > h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     margin: ${SPACINGS.SPACING_6W} 0;
   }
 
-  > p,
-  > a,
-  > button {
+  p,
+  a,
+  button {
     margin: ${SPACINGS.SPACING_4W} 0;
   }
 
@@ -42,7 +48,7 @@ export const Container = styled.div`
     color: ${COLORS.BLUE_FRANCE};
   }
 
-  > .spacer {
+  .spacer {
     height: ${SPACINGS.SPACING_4W};
   }
 
@@ -50,7 +56,7 @@ export const Container = styled.div`
     padding-left: 4rem;
   }
 
-  > blockquote {
+  blockquote {
     background-color: ${COLORS.BLUE_FRANCE_100};
     border-left: 4px solid ${COLORS.BLUE_FRANCE_300};
     border-radius: 3px;

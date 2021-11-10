@@ -14,31 +14,33 @@ export const GuidePropertyDeed = (
     <>
       <TITLES.H1>Je cherche un titre de propriété</TITLES.H1>
 
-      <p>
-        Le titre de propriété est la copie authentique de l'acte de vente signé
-        chez le notaire. Il est remis à l'acquéreur d'un bien immobilier.
-      </p>
+      <div className="innerContainer">
+        <p>
+          Le titre de propriété est la copie authentique de l'acte de vente
+          signé chez le notaire. Il est remis à l'acquéreur d'un bien
+          immobilier.
+        </p>
 
-      <p>
-        En cas de perte d'un titre de propriété, il est possible de retrouver
-        <strong>l'acte de vente établi par le notaire</strong>.
-      </p>
+        <p>
+          En cas de perte d'un titre de propriété, il est possible de retrouver
+          <strong>l'acte de vente établi par le notaire</strong>.
+        </p>
 
-      <p>
-        Les <strong>registres des hypothèques</strong> contiennent une copie des
-        actes notariés et peuvent à ce titre pallier le manque ou la perte d'un
-        titre de propriété.
-      </p>
+        <p>
+          Les <strong>registres des hypothèques</strong> contiennent une copie
+          des actes notariés et peuvent à ce titre pallier le manque ou la perte
+          d'un titre de propriété.
+        </p>
+      </div>
 
-      <div className="spacer" />
       <Link
         href={buildRoute(routes.BEFORE_NOTARIZED_DEED)}
-        label="Consulter un acte notarié"
+        label="Les actes notariés"
         kind={ELinkKind.SECONDARY}
       />
       <Link
         href={buildRoute(routes.BEFORE_MORTGAGE_REGISTRY)}
-        label="Consulter un registre des hypothèques"
+        label="Les registres des hypothèques"
         kind={ELinkKind.SECONDARY}
       />
       <Button

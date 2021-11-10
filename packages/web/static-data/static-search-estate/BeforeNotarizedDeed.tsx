@@ -2,7 +2,7 @@ import { useRouter } from 'next/router';
 import { ELinkKind, Link } from '@locadocs/design-system/components/Link';
 import { Button, EButtonKind } from '@locadocs/design-system/components/Button';
 import * as TITLES from '@locadocs/design-system/components/Title';
-import { mdiArrowLeft } from '@mdi/js';
+import { mdiArrowLeft, mdiArrowRight } from '@mdi/js';
 import { resultRoutes, routes } from './index';
 
 export const BeforeNotarizedDeed = (
@@ -22,7 +22,8 @@ export const BeforeNotarizedDeed = (
             : routes.SELECT_CITY_NOTARIZED_DEED,
         )}
         label="Consulter un acte notarié"
-        kind={ELinkKind.SECONDARY}
+        kind={ELinkKind.PRIMARY}
+        leftIcon={mdiArrowRight}
       />
       <Link
         href={buildRoute(routes.INFOS_NOTARIZED_DEED)}

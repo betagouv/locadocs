@@ -2,7 +2,7 @@ import { useRouter } from 'next/router';
 import { ELinkKind, Link } from '@locadocs/design-system/components/Link';
 import { Button, EButtonKind } from '@locadocs/design-system/components/Button';
 import * as TITLES from '@locadocs/design-system/components/Title';
-import { mdiArrowLeft } from '@mdi/js';
+import { mdiArrowLeft, mdiArrowRight } from '@mdi/js';
 import { resultRoutes, routes } from './index';
 
 export const BeforeMortgageRegistry = (
@@ -22,7 +22,8 @@ export const BeforeMortgageRegistry = (
             : routes.SELECT_CITY_MORTGAGE_REGISTRY,
         )}
         label="Consulter un registre des hypothèques"
-        kind={ELinkKind.SECONDARY}
+        kind={ELinkKind.PRIMARY}
+        leftIcon={mdiArrowRight}
       />
       <Link
         href={buildRoute(routes.INFOS_MORTGAGE_REGISTRY)}

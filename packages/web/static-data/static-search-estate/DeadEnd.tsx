@@ -19,6 +19,9 @@ export const DeadEnd = (buildRoute: (route: string) => string): JSX.Element => {
         label="Oui, indiquez-moi d'autres pistes"
         kind={ELinkKind.SECONDARY}
       />
+
+      <div className="spacer" />
+
       <Link
         href={buildRoute('')}
         label="Non, j'ai terminé. je donne mon avis pour améliorer l'outil"
@@ -26,6 +29,7 @@ export const DeadEnd = (buildRoute: (route: string) => string): JSX.Element => {
       />
 
       <div className="spacer" />
+
       <Button
         onClick={() => router.back()}
         leftIcon={mdiArrowLeft}

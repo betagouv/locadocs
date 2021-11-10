@@ -2,7 +2,7 @@ import { useRouter } from 'next/router';
 import { ELinkKind, Link } from '@locadocs/design-system/components/Link';
 import { Button, EButtonKind } from '@locadocs/design-system/components/Button';
 import * as TITLES from '@locadocs/design-system/components/Title';
-import { mdiArrowLeft } from '@mdi/js';
+import { mdiArrowLeft, mdiArrowRight } from '@mdi/js';
 import { resultRoutes, routes } from './index';
 
 export const BeforeLandRegistry = (
@@ -22,7 +22,8 @@ export const BeforeLandRegistry = (
             : routes.SELECT_CITY_LAND_REGISTRY,
         )}
         label="Consulter un plan cadastral"
-        kind={ELinkKind.SECONDARY}
+        kind={ELinkKind.PRIMARY}
+        leftIcon={mdiArrowRight}
       />
       <Link
         href={buildRoute(
@@ -31,7 +32,8 @@ export const BeforeLandRegistry = (
             : routes.SELECT_CITY_LAND_REGISTRY_DOC,
         )}
         label="Consulter la documentation cadastrale écrite"
-        kind={ELinkKind.SECONDARY}
+        kind={ELinkKind.PRIMARY}
+        leftIcon={mdiArrowRight}
       />
       <Link
         href={buildRoute(routes.INFOS_LAND_REGISTRY)}

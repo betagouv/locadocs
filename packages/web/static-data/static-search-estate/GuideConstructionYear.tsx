@@ -16,27 +16,28 @@ export const GuideConstructionYear = (
         Je cherche l'année de construction d'un bien immobilier
       </TITLES.H1>
 
-      <p>
-        La construction d'une propriété bâtie doit être déclarée à
-        l'administration fiscale et fait l'objet d'une mention sur les registres
-        du <strong>cadastre</strong>. Cela permet de connaître de manière
-        approximative la date de la construction.
-      </p>
-      <p>
-        A partir de 1943, il est possible de chercher le{' '}
-        <strong>permis de construire</strong> soumis à l'occasion de la
-        construction.
-      </p>
+      <div className="innerContainer">
+        <p>
+          La construction d'une propriété bâtie doit être déclarée à
+          l'administration fiscale et fait l'objet d'une mention sur les
+          registres du <strong>cadastre</strong>. Cela permet de connaître de
+          manière approximative la date de la construction.
+        </p>
+        <p>
+          A partir de 1943, il est possible de chercher le{' '}
+          <strong>permis de construire</strong> soumis à l'occasion de la
+          construction.
+        </p>
+      </div>
 
-      <div className="spacer" />
       <Link
         href={buildRoute(routes.BEFORE_LAND_REGISTRY)}
-        label="Consulter le cadastre"
+        label="Le cadastre"
         kind={ELinkKind.SECONDARY}
       />
       <Link
         href={buildRoute(routes.BEFORE_BUILDING_PERMIT)}
-        label="Consulter un permis de construire"
+        label="Les permis de construire"
         kind={ELinkKind.SECONDARY}
       />
       <Button

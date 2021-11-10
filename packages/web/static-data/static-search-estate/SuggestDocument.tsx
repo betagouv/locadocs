@@ -11,17 +11,18 @@ export const SuggestDocument = (): JSX.Element => {
     <>
       <TITLES.H1>Mon document n'est pas dans la liste</TITLES.H1>
 
-      <p>
-        Notre liste de documents n'est pas exhaustive, mais nous travaillons à
-        l'enrichir progressivement en nous appuyant sur les retours des usagers.
-      </p>
+      <div className="innerContainer">
+        <p>
+          Notre liste de documents n'est pas exhaustive, mais nous travaillons à
+          l'enrichir progressivement en nous appuyant sur les retours des
+          usagers.
+        </p>
 
-      <p>
-        Souhaitez-vous nous suggérer une nouvelle typologie de documents à
-        laquelle nous n'aurions pas pensé ?
-      </p>
-
-      <div className="spacer" />
+        <p>
+          Souhaitez-vous nous suggérer une nouvelle typologie de documents à
+          laquelle nous n'aurions pas pensé ?
+        </p>
+      </div>
 
       <Input
         isTextArea

@@ -2,7 +2,7 @@ import { useRouter } from 'next/router';
 import { ELinkKind, Link } from '@locadocs/design-system/components/Link';
 import { Button, EButtonKind } from '@locadocs/design-system/components/Button';
 import * as TITLES from '@locadocs/design-system/components/Title';
-import { mdiArrowLeft } from '@mdi/js';
+import { mdiArrowLeft, mdiArrowRight } from '@mdi/js';
 import { resultRoutes, routes } from './index';
 
 export const WhoCanGetLandRegistry = (
@@ -15,28 +15,26 @@ export const WhoCanGetLandRegistry = (
     <>
       <TITLES.H1>Qui peut consulter le cadastre&nbsp;?</TITLES.H1>
 
-      <p>Les plans sont librement communicables.</p>
-      <p>
-        Les matrices cadastrales (registres des propriétaires) sont librement
-        communicables au-delà d'un délai de 50 ans. Avant l'échéance du délai de
-        50 ans&nbsp;:
-      </p>
+      <div className="innerContainer">
+        <p>Les plans sont librement communicables.</p>
+        <p>
+          Les matrices cadastrales (registres des propriétaires) sont librement
+          communicables au-delà d'un délai de 50 ans. Avant l'échéance du délai
+          de 50 ans&nbsp;:
+        </p>
 
-      <ul>
-        <li>Le propriétaire peut demander les relevés de ses propriétés.</li>
-        <li>
-          Les tiers peuvent obtenir la communication ponctuelle d’extraits
-          d’informations cadastrales concernant des parcelles déterminées.
-        </li>
-      </ul>
+        <ul>
+          <li>Le propriétaire peut demander les relevés de ses propriétés.</li>
+          <li>
+            Les tiers peuvent obtenir la communication ponctuelle d’extraits
+            d’informations cadastrales concernant des parcelles déterminées.
+          </li>
+        </ul>
 
-      <div className="spacer" />
-
-      <p>
-        <strong>Que souhaitez-vous faire&nbsp;?</strong>
-      </p>
-
-      <div className="spacer" />
+        <p>
+          <strong>Que souhaitez-vous faire&nbsp;?</strong>
+        </p>
+      </div>
 
       <Link
         href={buildRoute(
@@ -45,7 +43,8 @@ export const WhoCanGetLandRegistry = (
             : routes.SELECT_CITY_LAND_REGISTRY,
         )}
         label="Consulter un plan cadastral"
-        kind={ELinkKind.SECONDARY}
+        kind={ELinkKind.PRIMARY}
+        leftIcon={mdiArrowRight}
       />
       <Link
         href={buildRoute(
@@ -54,7 +53,8 @@ export const WhoCanGetLandRegistry = (
             : routes.SELECT_CITY_LAND_REGISTRY_DOC,
         )}
         label="Consulter la documentation cadastrale écrite"
-        kind={ELinkKind.SECONDARY}
+        kind={ELinkKind.PRIMARY}
+        leftIcon={mdiArrowRight}
       />
 
       <Button
