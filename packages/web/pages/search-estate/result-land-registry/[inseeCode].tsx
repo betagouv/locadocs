@@ -8,10 +8,12 @@ import { mdiArrowLeft } from '@mdi/js';
 import { GLOBALS } from '../../../static-data/static-search-estate';
 import { Loader } from '@locadocs/design-system/components/Loader';
 import type { City } from '@locadocs/shared/types/City';
+import { Questionnaire } from '@components/Questionnaire';
 
 const ResultBuildingPermit = (): JSX.Element => {
   let isMounted = true;
   const router = useRouter();
+  const { inseeCode } = router.query;
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [city, setCity] = useState<City>();
 
@@ -83,6 +85,13 @@ const ResultBuildingPermit = (): JSX.Element => {
           </>
         )}
       </StaticData>
+
+      {!isLoading && (
+        <Questionnaire
+          page="result-land-registry"
+          params={{ inseeCode: String(inseeCode), city: String(city?.name) }}
+        />
+      )}
     </SiteLayout>
   );
 };
