@@ -3,12 +3,13 @@ import { ELinkKind, Link } from '@locadocs/design-system/components/Link';
 import { Button, EButtonKind } from '@locadocs/design-system/components/Button';
 import * as TITLES from '@locadocs/design-system/components/Title';
 import { mdiArrowLeft } from '@mdi/js';
-// import { routes } from './index';
+import { resultRoutes, routes } from './index';
 
 export const WhoCanGetBuildingPermit = (
   buildRoute: (route: string) => string,
 ): JSX.Element => {
   const router = useRouter();
+  const { inseeCode } = router.query;
 
   return (
     <>
@@ -40,7 +41,11 @@ export const WhoCanGetBuildingPermit = (
 
       <div className="spacer" />
       <Link
-        href={buildRoute('')}
+        href={buildRoute(
+          inseeCode
+            ? `${resultRoutes.RESULT_BUILDING_PERMIT}/${inseeCode}`
+            : routes.SELECT_CITY_BUILDING_PERMIT,
+        )}
         label="Je souhaite consulter un permis de construire"
         kind={ELinkKind.SECONDARY}
       />
