@@ -13,20 +13,21 @@ export const WhoCanGetMortgageRegistry = (
 
   return (
     <>
-      <TITLES.H1>Qui peut consulter un acte notarié&nbsp;?</TITLES.H1>
+      <TITLES.H1>
+        Qui peut consulter un registre des hypothèques&nbsp;?
+      </TITLES.H1>
 
       <p>
-        Les registres et minutes de notaires sont librement communicables à tous
-        au-delà d'un délai de 75 ans.
+        Les registres sont librement communicables à tous au-delà d'un délai de
+        50 ans.
       </p>
 
-      <p>Avant l'échéance du délai de 75 ans&nbsp;:</p>
+      <TITLES.H2>Avant l'échéance du délai de 50 ans :</TITLES.H2>
       <ul>
         <li>
-          Les parties ainsi que leurs héritiers et ayants droit ont accès à
-          l'acte de vente.
+          Le propriétaire, l'héritier, l'acquéreur ou le vendeur du bien peuvent
+          avoir accès.
         </li>
-
         <li>Les tiers peuvent demander un accès anticipé par dérogation.</li>
       </ul>
 
@@ -34,10 +35,10 @@ export const WhoCanGetMortgageRegistry = (
       <Link
         href={buildRoute(
           inseeCode
-            ? `${resultRoutes.RESULT_NOTARIZED_DEED}/${inseeCode}`
-            : routes.SELECT_CITY_NOTARIZED_DEED,
+            ? `${resultRoutes.RESULT_MORTGAGE_REGISTRY}/${inseeCode}`
+            : routes.SELECT_CITY_MORTGAGE_REGISTRY,
         )}
-        label="Je souhaite consulter un acte notarié"
+        label="Je souhaite consulter un registre des hypothèques"
         kind={ELinkKind.SECONDARY}
       />
 
