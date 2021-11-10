@@ -31,4 +31,10 @@ export const Container = styled.div`
       }
     }
   }
+
+  > form {
+    > button {
+      margin-top: 2rem;
+    }
+  }
 `;

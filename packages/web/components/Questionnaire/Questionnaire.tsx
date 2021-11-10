@@ -15,14 +15,17 @@ import { Input } from '@locadocs/design-system/components/Input';
 import { Button } from '@locadocs/design-system/components/Button';
 
 type TProps = {
-  origin: string;
+  page: string;
+  params: Record<string, string>;
 };
 
 export const Questionnaire: React.FC<TProps> = ({
-  origin,
+  page,
+  params,
 }: TProps): JSX.Element => {
   const [isSaving, setIsSaving] = React.useState<boolean>(false);
   const [hasAnswered, setHasAnswered] = React.useState<boolean>(false);
+  const [hasSendComment, setHasSendComment] = React.useState<boolean>(false);
   const [isSubmittingComment, setIsSubmittingComment] =
     React.useState<boolean>(false);
   // const [hasSubmittedComment, setHasSubmittedComment] =
@@ -37,7 +40,7 @@ export const Questionnaire: React.FC<TProps> = ({
         // eslint-disable-next-line @typescript-eslint/naming-convention
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ value, origin }),
+      body: JSON.stringify({ value, page, params }),
     });
     setIsSaving(false);
     setHasAnswered(true);
@@ -53,32 +56,23 @@ export const Questionnaire: React.FC<TProps> = ({
       return;
     }
 
-    // console.log(comment);
-
     setIsSubmittingComment(true);
-    // await fetch(`/api/satisfaction-vote`, {
-    //   method: 'POST',
-    //   cache: 'no-cache',
-    //   headers: {
-    //     // eslint-disable-next-line @typescript-eslint/naming-convention
-    //     'Content-Type': 'application/json',
-    //   },
-    //   body: JSON.stringify({ value, origin }),
-    // });
+    await fetch(`/api/send-suggestion`, {
+      method: 'POST',
+      cache: 'no-cache',
+      headers: {
+        // eslint-disable-next-line @typescript-eslint/naming-convention
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ comment, page, params }),
+    });
     setIsSubmittingComment(false);
-    // setHasAnswered(true);
+    setHasSendComment(true);
   };
 
   return (
     <Container>
       {isSaving && <Loader />}
-
-      {/**
-         * Vous avez une question, une remarque ou une suggestion d'amélioration de l'outil ?
-
-Faites-nous part de votre avis et aidez-nous à l'améliorer.
-         *
-         */}
 
       {!isSaving && !hasAnswered && (
         <>
@@ -91,7 +85,7 @@ Faites-nous part de votre avis et aidez-nous à l'améliorer.
               [mdiEmoticonHappyOutline, COLORS.GREEN_LIGHT],
               [mdiEmoticonExcitedOutline, COLORS.SUCCESS],
             ].map(([icon, color], index) => (
-              <button key={index} onClick={() => saveSatisfaction(index)}>
+              <button key={index} onClick={() => saveSatisfaction(index + 1)}>
                 <Icon path={icon} color={color} />
               </button>
             ))}
@@ -110,22 +104,26 @@ Faites-nous part de votre avis et aidez-nous à l'améliorer.
             Faites-nous part de votre avis et aidez-nous à l'améliorer.
           </p>
 
-          <form onSubmit={sendComment}>
-            <Input
-              isTextArea
-              inputProps={{
-                placeholder: 'Ce serait mieux si...',
-              }}
-              label="Vos suggestions"
-            />
+          {!hasSendComment && (
+            <form onSubmit={sendComment}>
+              <Input
+                isTextArea
+                inputProps={{
+                  placeholder: 'Ce serait mieux si...',
+                }}
+                label="Vos suggestions"
+              />
 
-            <Button
-              label="Envoyer mon commentaire"
-              leftIcon={mdiSend}
-              isLoading={isSubmittingComment}
-              type="submit"
-            />
-          </form>
+              <Button
+                label="Envoyer mon commentaire"
+                leftIcon={mdiSend}
+                isLoading={isSubmittingComment}
+                type="submit"
+              />
+            </form>
+          )}
+
+          {hasSendComment && <p>Un immense merci pour votre contribution.</p>}
         </>
       )}
     </Container>

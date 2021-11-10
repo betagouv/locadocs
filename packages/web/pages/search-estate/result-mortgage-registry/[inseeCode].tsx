@@ -14,6 +14,7 @@ import { Questionnaire } from '@components/Questionnaire';
 const ResultBuildingPermit = (): JSX.Element => {
   let isMounted = true;
   const router = useRouter();
+  const { inseeCode } = router.query;
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [city, setCity] = useState<undefined | City>();
   const [mortgageRegistry, setMortgageRegistry] = useState<
@@ -21,7 +22,6 @@ const ResultBuildingPermit = (): JSX.Element => {
   >();
   const loadData = async (): Promise<void> => {
     setIsLoading(true);
-    const { inseeCode } = router.query;
 
     if (!inseeCode) {
       return;
@@ -83,7 +83,12 @@ const ResultBuildingPermit = (): JSX.Element => {
         )}
       </StaticData>
 
-      <Questionnaire origin="result-mortgage-registry" />
+      {!isLoading && (
+        <Questionnaire
+          page="result-mortgage-registry"
+          params={{ inseeCode: String(inseeCode), city: String(city?.name) }}
+        />
+      )}
     </SiteLayout>
   );
 };

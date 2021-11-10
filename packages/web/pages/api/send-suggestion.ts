@@ -1,17 +1,17 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { connectToDb } from '@locadocs/shared/utils/mongo';
 
-export default async function satisfactionVotes(
+export default async function sendSuggestion(
   request: NextApiRequest,
   response: NextApiResponse,
 ): Promise<void> {
-  const { value, page, params } = request.body;
+  const { comment, page, params } = request.body;
   const client = await connectToDb();
   await client
     .db('locadocs')
-    .collection('satisfactionVotes')
+    .collection('suggestions')
     .insertOne({
-      value,
+      comment,
       page,
       params,
       userAgent: request.headers['user-agent'],
