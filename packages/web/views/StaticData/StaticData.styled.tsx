@@ -38,6 +38,10 @@ export const Container = styled.div`
     margin: ${SPACINGS.SPACING_4W} 0;
   }
 
+  a {
+    color: ${COLORS.BLUE_FRANCE};
+  }
+
   > .spacer {
     height: ${SPACINGS.SPACING_4W};
   }
