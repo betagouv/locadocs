@@ -28,8 +28,6 @@ export const Questionnaire: React.FC<TProps> = ({
   const [hasSendComment, setHasSendComment] = React.useState<boolean>(false);
   const [isSubmittingComment, setIsSubmittingComment] =
     React.useState<boolean>(false);
-  // const [hasSubmittedComment, setHasSubmittedComment] =
-  React.useState<boolean>(false);
 
   const saveSatisfaction = async (value: number) => {
     setIsSaving(true);

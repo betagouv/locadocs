@@ -4,6 +4,7 @@ import { Button, EButtonKind } from '@locadocs/design-system/components/Button';
 import * as TITLES from '@locadocs/design-system/components/Title';
 import { mdiArrowLeft } from '@mdi/js';
 import { routes } from './index';
+import { Suggestion } from '@components/Suggestion';
 
 export const DeadEnd = (buildRoute: (route: string) => string): JSX.Element => {
   const router = useRouter();
@@ -20,12 +21,11 @@ export const DeadEnd = (buildRoute: (route: string) => string): JSX.Element => {
         kind={ELinkKind.SECONDARY}
       />
 
-      <div className="spacer" />
-
-      <Link
-        href={buildRoute('')}
+      <Suggestion
+        page={'dead-end'}
+        placeholder="Ce serait mieux si..."
         label="Non, j'ai terminé. je donne mon avis pour améliorer l'outil"
-        kind={ELinkKind.SECONDARY}
+        actionLabel="Envoyer ma suggestion"
       />
 
       <div className="spacer" />

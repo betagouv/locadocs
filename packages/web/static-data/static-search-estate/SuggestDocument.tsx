@@ -1,8 +1,8 @@
 import { useRouter } from 'next/router';
-import { Input } from '@locadocs/design-system/components/Input';
 import { Button, EButtonKind } from '@locadocs/design-system/components/Button';
 import * as TITLES from '@locadocs/design-system/components/Title';
 import { mdiArrowLeft } from '@mdi/js';
+import { Suggestion } from '@components/Suggestion';
 
 export const SuggestDocument = (): JSX.Element => {
   const router = useRouter();
@@ -24,10 +24,11 @@ export const SuggestDocument = (): JSX.Element => {
         </p>
       </div>
 
-      <Input
-        isTextArea
-        inputProps={{ placeholder: 'Je souhaite accéder à....' }}
-        label="Votre suggestion"
+      <Suggestion
+        page={'dead-end'}
+        placeholder="Je souhaite accéder à..."
+        label="Quel document cherchez-vous ?"
+        actionLabel="Envoyer ma suggestion"
       />
 
       <div className="spacer" />
