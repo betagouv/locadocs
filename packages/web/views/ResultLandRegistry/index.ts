@@ -1,0 +1,1 @@
+export { ResultLandRegistry } from './ResultLandRegistry';
