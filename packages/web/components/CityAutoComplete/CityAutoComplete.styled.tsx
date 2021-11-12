@@ -16,6 +16,7 @@ export const Container = styled.div`
       padding: ${SPACINGS.SPACING_1W} ${SPACINGS.SPACING_4W};
       min-height: ${SPACINGS.SPACING_FINGER};
       border-bottom: 1px solid ${COLORS.G400};
+      margin: 0;
       transition: 200ms ease-out color, 200ms ease-out background-color;
 
       &:last-of-type {

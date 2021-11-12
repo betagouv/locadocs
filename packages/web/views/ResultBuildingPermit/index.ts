@@ -1,0 +1,1 @@
+export { ResultBuildingPermit } from './ResultBuildingPermit';
