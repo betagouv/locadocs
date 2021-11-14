@@ -1,0 +1,1 @@
+export { ResultNotarizedDeeds } from './ResultNotarizedDeeds';
