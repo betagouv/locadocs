@@ -56,6 +56,11 @@ export const Container = styled.div`
     padding-left: 4rem;
   }
 
+  .error {
+    font-weight: bold;
+    color: ${COLORS.ERROR};
+  }
+
   blockquote {
     background-color: ${COLORS.BLUE_FRANCE_100};
     border-left: 4px solid ${COLORS.BLUE_FRANCE_300};

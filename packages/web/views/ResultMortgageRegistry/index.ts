@@ -1,0 +1,1 @@
+export { ResultMortgageRegistry } from './ResultMortgageRegistry';
