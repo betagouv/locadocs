@@ -90,7 +90,7 @@ export const ResultLandRegistryDocs = (): JSX.Element => {
         {!isLoading && (
           <>
             <TITLES.H1>
-              Le cadastre pour {city?.name} - {city?.postalCode}
+              La documentation cadastrale pour {city?.name} - {city?.postalCode}
               {(city?.subCities?.length || []) > 0 &&
                 ` (${city?.subCities.join(', ')})`}
             </TITLES.H1>
