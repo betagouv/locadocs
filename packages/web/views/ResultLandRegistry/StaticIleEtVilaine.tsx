@@ -2,19 +2,31 @@ import * as TITLES from '@locadocs/design-system/components/Title';
 
 export const StaticIleEtVilaine = (): JSX.Element => (
   <>
-    <TITLES.H2>Pour les documents jusqu'en 1974</TITLES.H2>
-
     <p>
-      Les Archives départementales d'Ille-et-Vilaine conservent la documentation
-      cadastrale écrite jusqu'en 1974.
+      Le plan cadastral français est en ligne sur le site{' '}
+      <a href="https://www.cadastre.gouv.fr/scpc/accueil.do">
+        cadastre.gouv.fr
+      </a>
+      .
     </p>
 
+    <TITLES.H2>Plans napoléoniens</TITLES.H2>
+
     <p>
-      Vous pouvez vous rendre en salle de lecture des Archives départementales
-      d'Ille-et-Vilaine.
+      Les plans cadastraux napoléoniens (19e siècle) sont en ligne sur{' '}
+      <a href="https://archives-en-ligne.ille-et-vilaine.fr/thot_internet/FrmSommaireFrame.asp">
+        le site des Archives départementales d'Ille-et-Vilaine
+      </a>
+      .
     </p>
 
-    <p>Se rendre en salle de lecture des Archives départementales</p>
+    <TITLES.H2>Plans actuels</TITLES.H2>
+
+    <p>
+      Les autres plans cadastraux peuvent être consultés en salle de lecture des
+      Archives départementales d'Ille-et-Vilaine.
+    </p>
+
     <ul>
       <li>1 rue Jacques-Léonard à Rennes</li>
       <li>
@@ -28,24 +40,6 @@ export const StaticIleEtVilaine = (): JSX.Element => (
           archives@ille-et-vilaine.fr
         </a>
         .
-      </li>
-    </ul>
-
-    <TITLES.H2>Après 1974</TITLES.H2>
-
-    <p>
-      Pour consulter les documents postérieurs, il convient de s’adresser au
-      Pôle de topographie et de gestion cadastrale de Rennes.
-    </p>
-
-    <p>Contacter le Pôle de topographie et de gestion cadastrale</p>
-
-    <ul>
-      <li>2 boulevard Magenta à Rennes</li>
-      <li>02 99 29 37 55</li>
-      <li>du lundi au vendredi de 08h30 à 12h00</li>
-      <li>
-        sur rendez-vous uniquement : lundi, mardi et jeudi de 13h30 à 16h00
       </li>
     </ul>
   </>
