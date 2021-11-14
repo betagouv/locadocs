@@ -2,7 +2,7 @@ import * as TITLES from '@locadocs/design-system/components/Title';
 
 export const StaticSeineMartime = (): JSX.Element => (
   <>
-    <TITLES.H2>Jusqu'à 1963</TITLES.H2>
+    <TITLES.H2>Entre 1931 et 1963</TITLES.H2>
 
     <p>
       Les Archives départementales de Seine-Maritime conservent la documentation
@@ -13,7 +13,7 @@ export const StaticSeineMartime = (): JSX.Element => (
     <p>
       1. Dans un premier temps, pour vous assurer que le document que vous
       cherchez s'y trouve bien, vous pouvez faire une recherche dans{' '}
-      <a href="https://www.archivesdepartementales76.net/ark:/50278/c3cfbc4798380a895928223b72495735/archref/0/1">
+      <a href="https://www.archivesdepartementales76.net/">
         la liste des documents cadastraux conservés par les Archives
         départementales
       </a>
@@ -26,7 +26,6 @@ export const StaticSeineMartime = (): JSX.Element => (
       Seine-Maritime.
     </p>
 
-    <p>Se rendre en salle de lecture des Archives départementales</p>
     <ul>
       <li>Pôle culturel Grammont, 42 rue Henri II Plantagenêt à Rouen</li>
       <li>
@@ -36,9 +35,9 @@ export const StaticSeineMartime = (): JSX.Element => (
       <li>
         la prise de rendez-vous s'effectue sur{' '}
         <a href="https://www.seinemaritime.fr/reservation-archives/">
-          le site internet des Archives
-        </a>{' '}
-        départementales.
+          le site internet des Archives départementales
+        </a>
+        .
       </li>
     </ul>
 
@@ -49,17 +48,11 @@ export const StaticSeineMartime = (): JSX.Element => (
       Cellule foncière mutualisée du Havre.
     </p>
 
-    <p>Contacter la Cellule foncière mutualisée du Havre</p>
-
     <ul>
       <li>19 avenue du Général-Leclerc au Havre</li>
       <li>du lundi au vendredi de 09h00 à 12h00 et de 14h00 à 16h00</li>
       <li>02 35 19 22 07</li>
-      <li>
-        <a href="mailto:cfm.le-havre@dgfip.finances.gouv.fr">
-          cfm.le-havre@dgfip.finances.gouv.fr
-        </a>
-      </li>
+      <li>cfm.le-havre@dgfip.finances.gouv.fr</li>
     </ul>
   </>
 );

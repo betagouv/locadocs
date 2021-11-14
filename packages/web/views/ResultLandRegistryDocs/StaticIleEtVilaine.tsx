@@ -14,7 +14,6 @@ export const StaticIleEtVilaine = (): JSX.Element => (
       d'Ille-et-Vilaine.
     </p>
 
-    <p>Se rendre en salle de lecture des Archives départementales</p>
     <ul>
       <li>1 rue Jacques-Léonard à Rennes</li>
       <li>
@@ -23,11 +22,7 @@ export const StaticIleEtVilaine = (): JSX.Element => (
       </li>
       <li>
         la prise de rendez-vous s’effectue par téléphone au 02 99 02 40 00 du
-        lundi au mercredi ou par courriel{' '}
-        <a href="mailto:archives@ille-et-vilaine.fr">
-          archives@ille-et-vilaine.fr
-        </a>
-        .
+        lundi au mercredi ou par courriel (archives@ille-et-vilaine.fr).
       </li>
     </ul>
 
@@ -37,8 +32,6 @@ export const StaticIleEtVilaine = (): JSX.Element => (
       Pour consulter les documents postérieurs, il convient de s’adresser au
       Pôle de topographie et de gestion cadastrale de Rennes.
     </p>
-
-    <p>Contacter le Pôle de topographie et de gestion cadastrale</p>
 
     <ul>
       <li>2 boulevard Magenta à Rennes</li>

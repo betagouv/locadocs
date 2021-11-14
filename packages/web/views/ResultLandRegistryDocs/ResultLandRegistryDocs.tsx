@@ -5,12 +5,13 @@ import { StaticData } from '@views/StaticData';
 import { Button, EButtonKind } from '@locadocs/design-system/components/Button';
 import * as TITLES from '@locadocs/design-system/components/Title';
 import { mdiArrowLeft } from '@mdi/js';
-import type { City } from '@locadocs/shared/types/City';
 import { GLOBALS } from '../../static-data/static-search-estate';
 import { Loader } from '@locadocs/design-system/components/Loader';
+import type { City } from '@locadocs/shared/types/City';
 import { Questionnaire } from '@components/Questionnaire';
-import { StaticRennes } from './StaticRennes';
-import { StaticHavre } from './StaticHavre';
+import { StaticEure } from './StaticEure';
+import { StaticIleEtVilaine } from './StaticIleEtVilaine';
+import { StaticSeineMartime } from './StaticSeineMartime';
 
 export const ResultLandRegistryDocs = (): JSX.Element => {
   let isMounted = true;
@@ -28,7 +29,7 @@ export const ResultLandRegistryDocs = (): JSX.Element => {
     }
 
     const result = await fetch(
-      `/api/get-building-permit?inseeCode=${inseeCode}`,
+      `/api/get-land-registry-documentation?inseeCode=${inseeCode}`,
     );
     const { city } = await result.json();
 
@@ -46,28 +47,39 @@ export const ResultLandRegistryDocs = (): JSX.Element => {
     };
   }, [router.query]);
 
-  let content: JSX.Element;
+  let content: JSX.Element = (
+    <>
+      <p>
+        Pour consulter la documentation cadastre écrite, il convient de
+        s’adresser :
+      </p>
 
-  if (inseeCode === '35238') {
-    content = <StaticRennes />;
-  } else if (inseeCode === '76351') {
-    content = <StaticHavre />;
-  } else {
-    content = (
-      <>
-        <p>
-          Les permis de construire sont conservés à la mairie de la commune où a
-          été construit le bien.
-        </p>
-        <p>
-          Retrouver les coordonnées de la mairie sur{' '}
-          <a href="https://lannuaire.service-public.fr/navigation/mairie">
-            l'annuaire de service-public.fr
-          </a>
-          .
-        </p>
-      </>
-    );
+      <p>
+        Soit au centre des impôts. Vous pouvez retrouver les coordonnées des
+        centres des impôts sur{' '}
+        <a href="https://lannuaire.service-public.fr/navigation/centre_impots_fonciers">
+          l’annuaire de service.public.fr
+        </a>
+        .
+      </p>
+
+      <p>
+        Soit, pour la partie plus ancienne, aux Archives départementales. Vous
+        pouvez retrouver les coordonnées sur{' '}
+        <a href="https://francearchives.fr/fr/annuaire/departements">
+          l'annuaire des Archives départementales
+        </a>
+        .
+      </p>
+    </>
+  );
+
+  if ((city?.postalCode || '').slice(0, 2) === '35') {
+    content = <StaticIleEtVilaine />;
+  } else if ((city?.postalCode || '').slice(0, 2) === '76') {
+    content = <StaticSeineMartime />;
+  } else if ((city?.postalCode || '').slice(0, 2) === '27') {
+    content = <StaticEure />;
   }
 
   return (
@@ -78,7 +90,7 @@ export const ResultLandRegistryDocs = (): JSX.Element => {
         {!isLoading && (
           <>
             <TITLES.H1>
-              Permis de construire pour {city?.name} - {city?.postalCode}
+              Le cadastre pour {city?.name} - {city?.postalCode}
               {(city?.subCities?.length || []) > 0 &&
                 ` (${city?.subCities.join(', ')})`}
             </TITLES.H1>
@@ -96,7 +108,7 @@ export const ResultLandRegistryDocs = (): JSX.Element => {
 
       {!isLoading && (
         <Questionnaire
-          page="result-building-permit"
+          page="result-land-registry"
           params={{ inseeCode: String(inseeCode), city: String(city?.name) }}
         />
       )}

@@ -14,15 +14,10 @@ export const StaticEure = (): JSX.Element => (
       de l'Eure.
     </p>
 
-    <p>Se rendre en salle de lecture des Archives départementales</p>
-
     <ul>
       <li>2, rue de Verdun à Evreux</li>
       <li>ouverture le mercredi et le vendredi, de 9h à 12h et de 13h à 16h</li>
-      <li>
-        réservation obligatoire par courriel{' '}
-        <a href="mailto:archives@eure.fr">archives@eure.fr</a>
-      </li>
+      <li>réservation obligatoire par courriel (archives@eure.fr)</li>
     </ul>
 
     <p className="error">
@@ -37,8 +32,6 @@ export const StaticEure = (): JSX.Element => (
       convient de s'adresser au Service départemental des impôts fonciers de
       Louviers.
     </p>
-
-    <p>Contacter le Service départemental des impôts fonciers de Louviers</p>
 
     <ul>
       <li>place de la demi-Lune à Louviers</li>
