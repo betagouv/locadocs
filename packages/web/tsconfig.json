@@ -12,7 +12,8 @@
       "@static/*": ["static-data/*"],
       "@utils/*": ["./utils/*"],
       "@views/*": ["./views/*"]
-    }
+    },
+    "incremental": true
   },
   "exclude": ["node_modules"],
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]

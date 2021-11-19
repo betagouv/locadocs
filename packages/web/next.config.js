@@ -37,6 +37,11 @@ const denyPermissions = (...features) => {
 };
 
 module.exports = transpileModules({
+  experimental: {
+    // Enables the styled-components SWC transform
+    styledComponents: true,
+  },
+
   // Remove the http header powered by vercel
   poweredByHeader: false,
 

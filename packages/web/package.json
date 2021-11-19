@@ -22,9 +22,9 @@
     "@mdi/react": "^1.5.0",
     "@types/styled-components": "^5.1.14",
     "mongodb": "^3.6.9",
-    "next": "^11.0.1",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
+    "next": "12",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "styled-components": "^5.3.1",
     "zod": "^3.2.0"
   },
