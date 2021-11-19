@@ -4,6 +4,7 @@ import { Button, EButtonKind } from '@locadocs/design-system/components/Button';
 import * as TITLES from '@locadocs/design-system/components/Title';
 import { mdiArrowLeft } from '@mdi/js';
 import { routes } from './index';
+import { BreadCrump } from '@components/BreadCrump';
 
 export const WhatAreYouLookingFor = (
   buildRoute: (route: string) => string,
@@ -12,6 +13,13 @@ export const WhatAreYouLookingFor = (
 
   return (
     <>
+      <BreadCrump
+        steps={[
+          { label: 'commencer ma recherche', href: buildRoute(routes.ROOT) },
+          { label: 'que cherchez-vous ?' },
+        ]}
+      />
+
       <TITLES.H1>Que recherchez-vous&nbsp;?</TITLES.H1>
 
       <Link

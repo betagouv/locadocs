@@ -4,6 +4,7 @@ import { Button, EButtonKind } from '@locadocs/design-system/components/Button';
 import * as TITLES from '@locadocs/design-system/components/Title';
 import { mdiArrowLeft, mdiArrowRight } from '@mdi/js';
 import { resultRoutes, routes } from './index';
+import { BreadCrump } from '@components/BreadCrump';
 
 export const InfosNotarizedDeed = (
   buildRoute: (route: string) => string,
@@ -13,6 +14,21 @@ export const InfosNotarizedDeed = (
 
   return (
     <>
+      <BreadCrump
+        steps={[
+          { label: 'commencer ma recherche', href: buildRoute(routes.ROOT) },
+          {
+            label: 'quel document cherchez-vous ?',
+            href: buildRoute(routes.DOCUMENT_CHOICE),
+          },
+          {
+            label: 'un acte notarié',
+            href: buildRoute(routes.BEFORE_NOTARIZED_DEED),
+          },
+          { label: 'que contiennent un acte notarié ?' },
+        ]}
+      />
+
       <TITLES.H1>Que contient un acte notarié&nbsp;?</TITLES.H1>
 
       <div className="innerContainer">

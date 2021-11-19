@@ -5,12 +5,20 @@ import * as TITLES from '@locadocs/design-system/components/Title';
 import { mdiArrowLeft } from '@mdi/js';
 import { routes } from './index';
 import { Suggestion } from '@components/Suggestion';
+import { BreadCrump } from '@components/BreadCrump';
 
 export const DeadEnd = (buildRoute: (route: string) => string): JSX.Element => {
   const router = useRouter();
 
   return (
     <>
+      <BreadCrump
+        steps={[
+          { label: 'commencer ma recherche', href: buildRoute(routes.ROOT) },
+          { label: 'souhaitez-vous continuer ?' },
+        ]}
+      />
+
       <TITLES.H1>
         Souhaitez-vous consulter d'autres pistes de recherche ?
       </TITLES.H1>

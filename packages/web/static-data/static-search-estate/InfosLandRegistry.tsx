@@ -4,6 +4,7 @@ import { Button, EButtonKind } from '@locadocs/design-system/components/Button';
 import * as TITLES from '@locadocs/design-system/components/Title';
 import { mdiArrowLeft, mdiArrowRight } from '@mdi/js';
 import { resultRoutes, routes } from './index';
+import { BreadCrump } from '@components/BreadCrump';
 
 export const InfosLandRegistry = (
   buildRoute: (route: string) => string,
@@ -13,6 +14,21 @@ export const InfosLandRegistry = (
 
   return (
     <>
+      <BreadCrump
+        steps={[
+          { label: 'commencer ma recherche', href: buildRoute(routes.ROOT) },
+          {
+            label: 'quel document cherchez-vous ?',
+            href: buildRoute(routes.DOCUMENT_CHOICE),
+          },
+          {
+            label: 'le cadastre',
+            href: buildRoute(routes.BEFORE_LAND_REGISTRY),
+          },
+          { label: 'que contient le cadastre ?' },
+        ]}
+      />
+
       <TITLES.H1>Que contient le cadastre&nbsp;?</TITLES.H1>
 
       <div className="innerContainer">

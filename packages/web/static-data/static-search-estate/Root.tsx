@@ -4,12 +4,15 @@ import { Button, EButtonKind } from '@locadocs/design-system/components/Button';
 import * as TITLES from '@locadocs/design-system/components/Title';
 import { routes } from './index';
 import { mdiArrowLeft } from '@mdi/js';
+import { BreadCrump } from '@components/BreadCrump';
 
 export const Root = (buildRoute: (route: string) => string): JSX.Element => {
   const router = useRouter();
 
   return (
     <>
+      <BreadCrump steps={[{ label: 'commencer ma recherche' }]} />
+
       <TITLES.H1>Première étape...</TITLES.H1>
 
       <div className="innerContainer">

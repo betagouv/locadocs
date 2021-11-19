@@ -4,6 +4,7 @@ import { Button, EButtonKind } from '@locadocs/design-system/components/Button';
 import * as TITLES from '@locadocs/design-system/components/Title';
 import { mdiArrowLeft } from '@mdi/js';
 import { routes } from '.';
+import { BreadCrump } from '@components/BreadCrump';
 
 export const GuidePropertyDeed = (
   buildRoute: (route: string) => string,
@@ -12,6 +13,17 @@ export const GuidePropertyDeed = (
 
   return (
     <>
+      <BreadCrump
+        steps={[
+          { label: 'commencer ma recherche', href: buildRoute(routes.ROOT) },
+          {
+            label: 'que cherchez-vous ?',
+            href: buildRoute(routes.WHAT_ARE_YOU_LOOKING_FOR),
+          },
+          { label: 'un titre de propriété' },
+        ]}
+      />
+
       <TITLES.H1>Je cherche un titre de propriété</TITLES.H1>
 
       <div className="innerContainer">

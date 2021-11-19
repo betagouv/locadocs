@@ -4,6 +4,7 @@ import { Button, EButtonKind } from '@locadocs/design-system/components/Button';
 import * as TITLES from '@locadocs/design-system/components/Title';
 import { mdiArrowLeft, mdiArrowRight } from '@mdi/js';
 import { resultRoutes, routes } from './index';
+import { BreadCrump } from '@components/BreadCrump';
 
 export const GuidePreviousRepairs = (
   buildRoute: (route: string) => string,
@@ -13,6 +14,17 @@ export const GuidePreviousRepairs = (
 
   return (
     <>
+      <BreadCrump
+        steps={[
+          { label: 'commencer ma recherche', href: buildRoute(routes.ROOT) },
+          {
+            label: 'que cherchez-vous ?',
+            href: buildRoute(routes.WHAT_ARE_YOU_LOOKING_FOR),
+          },
+          { label: 'l’antériorité des travaux sur un bien immobilier' },
+        ]}
+      />
+
       <TITLES.H1>
         Je cherche l'antériorité des travaux sur un bien immobilier
       </TITLES.H1>

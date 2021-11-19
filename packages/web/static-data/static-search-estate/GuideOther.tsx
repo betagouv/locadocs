@@ -3,12 +3,27 @@ import { Button, EButtonKind } from '@locadocs/design-system/components/Button';
 import * as TITLES from '@locadocs/design-system/components/Title';
 import { mdiArrowLeft } from '@mdi/js';
 import { Suggestion } from '@components/Suggestion';
+import { BreadCrump } from '@components/BreadCrump';
+import { routes } from './index';
 
-export const GuideOther = (): JSX.Element => {
+export const GuideOther = (
+  buildRoute: (route: string) => string,
+): JSX.Element => {
   const router = useRouter();
 
   return (
     <>
+      <BreadCrump
+        steps={[
+          { label: 'commencer ma recherche', href: buildRoute(routes.ROOT) },
+          {
+            label: 'que cherchez-vous ?',
+            href: buildRoute(routes.WHAT_ARE_YOU_LOOKING_FOR),
+          },
+          { label: 'ma question n’est pas dans la liste' },
+        ]}
+      />
+
       <TITLES.H1>Ma question n'est pas dans la liste</TITLES.H1>
 
       <div className="innerContainer">

@@ -4,6 +4,7 @@ import { Button, EButtonKind } from '@locadocs/design-system/components/Button';
 import * as TITLES from '@locadocs/design-system/components/Title';
 import { mdiArrowLeft, mdiArrowRight } from '@mdi/js';
 import { resultRoutes, routes } from './index';
+import { BreadCrump } from '@components/BreadCrump';
 
 export const InfosMortgageRegistry = (
   buildRoute: (route: string) => string,
@@ -13,6 +14,21 @@ export const InfosMortgageRegistry = (
 
   return (
     <>
+      <BreadCrump
+        steps={[
+          { label: 'commencer ma recherche', href: buildRoute(routes.ROOT) },
+          {
+            label: 'quel document cherchez-vous ?',
+            href: buildRoute(routes.DOCUMENT_CHOICE),
+          },
+          {
+            label: 'un registre des hypothèques',
+            href: buildRoute(routes.BEFORE_MORTGAGE_REGISTRY),
+          },
+          { label: 'que contiennent les registres des hypothèques ?' },
+        ]}
+      />
+
       <TITLES.H1>
         Que contiennent les registres des hypothèques&nbsp;?
       </TITLES.H1>

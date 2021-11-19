@@ -3,7 +3,8 @@ import { CityAutoComplete } from '@components/CityAutoComplete';
 import { Button, EButtonKind } from '@locadocs/design-system/components/Button';
 import * as TITLES from '@locadocs/design-system/components/Title';
 import { mdiArrowLeft } from '@mdi/js';
-import { resultRoutes } from '.';
+import { resultRoutes, routes } from '.';
+import { BreadCrump } from '@components/BreadCrump';
 
 export const SelectCityLandRegistry = (
   buildRoute: (route: string) => string,
@@ -15,6 +16,21 @@ export const SelectCityLandRegistry = (
 
   return (
     <>
+      <BreadCrump
+        steps={[
+          { label: 'commencer ma recherche', href: buildRoute(routes.ROOT) },
+          {
+            label: 'quel document cherchez-vous ?',
+            href: buildRoute(routes.DOCUMENT_CHOICE),
+          },
+          {
+            label: 'le cadastre',
+            href: buildRoute(routes.BEFORE_LAND_REGISTRY),
+          },
+          { label: 'sélectionner la ville du bien pour le plan cadastral' },
+        ]}
+      />
+
       <TITLES.H1>Dans quelle ville se situe le bien&nbsp;?</TITLES.H1>
 
       <CityAutoComplete buildLink={buildLink} />

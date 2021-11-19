@@ -4,6 +4,7 @@ import { Button, EButtonKind } from '@locadocs/design-system/components/Button';
 import * as TITLES from '@locadocs/design-system/components/Title';
 import { mdiArrowLeft, mdiArrowRight } from '@mdi/js';
 import { resultRoutes, routes } from './index';
+import { BreadCrump } from '@components/BreadCrump';
 
 export const WhoCanGetMortgageRegistry = (
   buildRoute: (route: string) => string,
@@ -13,6 +14,21 @@ export const WhoCanGetMortgageRegistry = (
 
   return (
     <>
+      <BreadCrump
+        steps={[
+          { label: 'commencer ma recherche', href: buildRoute(routes.ROOT) },
+          {
+            label: 'quel document cherchez-vous ?',
+            href: buildRoute(routes.DOCUMENT_CHOICE),
+          },
+          {
+            label: 'un registres des hypothèques',
+            href: buildRoute(routes.BEFORE_MORTGAGE_REGISTRY),
+          },
+          { label: 'qui peut consulter un registre des hypothèques ?' },
+        ]}
+      />
+
       <TITLES.H1>
         Qui peut consulter un registre des hypothèques&nbsp;?
       </TITLES.H1>

@@ -3,12 +3,27 @@ import { Button, EButtonKind } from '@locadocs/design-system/components/Button';
 import * as TITLES from '@locadocs/design-system/components/Title';
 import { mdiArrowLeft } from '@mdi/js';
 import { Suggestion } from '@components/Suggestion';
+import { BreadCrump } from '@components/BreadCrump';
+import { routes } from './index';
 
-export const SuggestDocument = (): JSX.Element => {
+export const SuggestDocument = (
+  buildRoute: (route: string) => string,
+): JSX.Element => {
   const router = useRouter();
 
   return (
     <>
+      <BreadCrump
+        steps={[
+          { label: 'commencer ma recherche', href: buildRoute(routes.ROOT) },
+          {
+            label: 'quel document cherchez-vous ?',
+            href: buildRoute(routes.DOCUMENT_CHOICE),
+          },
+          { label: 'mon document n’est pas dans la liste' },
+        ]}
+      />
+
       <TITLES.H1>Mon document n'est pas dans la liste</TITLES.H1>
 
       <div className="innerContainer">

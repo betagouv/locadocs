@@ -50,7 +50,7 @@ export const routes = {
   INFOS_LAND_REGISTRY: 'infos-land-registry',
   INFOS_MORTGAGE_REGISTRY: 'infos-mortgage-registry',
   INFOS_NOTARIZED_DEED: 'infos-notarized-deed',
-  ROOT: '/',
+  ROOT: '',
   SELECT_CITY_BUILDING_PERMIT: 'select-city-building-permit',
   SELECT_CITY_LAND_REGISTRY_DOC: 'select-city-land-registry-doc',
   SELECT_CITY_LAND_REGISTRY: 'select-city-land-registry',

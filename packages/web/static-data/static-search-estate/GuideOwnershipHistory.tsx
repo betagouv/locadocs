@@ -4,6 +4,7 @@ import { Button, EButtonKind } from '@locadocs/design-system/components/Button';
 import * as TITLES from '@locadocs/design-system/components/Title';
 import { mdiArrowLeft } from '@mdi/js';
 import { routes } from '.';
+import { BreadCrump } from '@components/BreadCrump';
 
 export const GuideOwnershipHistory = (
   buildRoute: (route: string) => string,
@@ -12,6 +13,17 @@ export const GuideOwnershipHistory = (
 
   return (
     <>
+      <BreadCrump
+        steps={[
+          { label: 'commencer ma recherche', href: buildRoute(routes.ROOT) },
+          {
+            label: 'que cherchez-vous ?',
+            href: buildRoute(routes.WHAT_ARE_YOU_LOOKING_FOR),
+          },
+          { label: 'l’historique des propriétaires d’un bien foncier' },
+        ]}
+      />
+
       <TITLES.H1>
         Je cherche l'historique des propriétaires d'un bien foncier
       </TITLES.H1>

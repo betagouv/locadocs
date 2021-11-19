@@ -4,6 +4,7 @@ import { Button, EButtonKind } from '@locadocs/design-system/components/Button';
 import * as TITLES from '@locadocs/design-system/components/Title';
 import { mdiArrowLeft, mdiArrowRight } from '@mdi/js';
 import { resultRoutes, routes } from './index';
+import { BreadCrump } from '@components/BreadCrump';
 
 export const InfosBuildingPermit = (
   buildRoute: (route: string) => string,
@@ -13,6 +14,21 @@ export const InfosBuildingPermit = (
 
   return (
     <>
+      <BreadCrump
+        steps={[
+          { label: 'commencer ma recherche', href: buildRoute(routes.ROOT) },
+          {
+            label: 'quel document cherchez-vous ?',
+            href: buildRoute(routes.DOCUMENT_CHOICE),
+          },
+          {
+            label: 'un permis de construire',
+            href: buildRoute(routes.BEFORE_BUILDING_PERMIT),
+          },
+          { label: 'que contient un permis de construire ?' },
+        ]}
+      />
+
       <TITLES.H1>Que contient un permis de construire&nbsp;?</TITLES.H1>
 
       <div className="innerContainer">
