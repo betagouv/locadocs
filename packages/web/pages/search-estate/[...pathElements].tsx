@@ -69,7 +69,7 @@ export const getStaticProps: GetStaticProps = async () => ({
 
 export const getStaticPaths: GetStaticPaths = async () => ({
   paths: Object.values(routes)
-    .filter(route => route !== '/')
+    .filter(route => route !== '/' && route !== '')
     .map(route => ({
       params: {
         pathElements: [route],
