@@ -5,6 +5,7 @@ import * as TITLES from '@locadocs/design-system/components/Title';
 import { mdiArrowLeft } from '@mdi/js';
 import { routes } from '.';
 import { BreadCrump } from '@components/BreadCrump';
+import { Questionnaire } from '@components/Questionnaire';
 
 export const GuideServitude = (
   buildRoute: (route: string) => string,
@@ -49,11 +50,14 @@ export const GuideServitude = (
         </p>
       </div>
 
+      <Questionnaire page="guide-servitude" />
+
       <Link
         href={buildRoute(routes.GUIDE_PROPERTY_DEED)}
         label="Chercher un titre de propriété"
         kind={ELinkKind.SECONDARY}
       />
+
       <Button
         onClick={() => router.back()}
         leftIcon={mdiArrowLeft}

@@ -5,6 +5,7 @@ import * as TITLES from '@locadocs/design-system/components/Title';
 import { mdiArrowLeft } from '@mdi/js';
 import { routes } from '.';
 import { BreadCrump } from '@components/BreadCrump';
+import { Questionnaire } from '@components/Questionnaire';
 
 export const GuidePropertyDeed = (
   buildRoute: (route: string) => string,
@@ -45,16 +46,20 @@ export const GuidePropertyDeed = (
         </p>
       </div>
 
+      <Questionnaire page="guide-property-deed" />
+
       <Link
         href={buildRoute(routes.BEFORE_NOTARIZED_DEED)}
         label="Les actes notariés"
         kind={ELinkKind.SECONDARY}
       />
+
       <Link
         href={buildRoute(routes.BEFORE_MORTGAGE_REGISTRY)}
         label="Les registres des hypothèques"
         kind={ELinkKind.SECONDARY}
       />
+
       <Button
         onClick={() => router.back()}
         leftIcon={mdiArrowLeft}

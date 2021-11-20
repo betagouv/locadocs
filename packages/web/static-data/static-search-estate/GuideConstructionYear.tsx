@@ -5,6 +5,7 @@ import * as TITLES from '@locadocs/design-system/components/Title';
 import { mdiArrowLeft } from '@mdi/js';
 import { routes } from '.';
 import { BreadCrump } from '@components/BreadCrump';
+import { Questionnaire } from '@components/Questionnaire';
 
 export const GuideConstructionYear = (
   buildRoute: (route: string) => string,
@@ -42,16 +43,20 @@ export const GuideConstructionYear = (
         </p>
       </div>
 
+      <Questionnaire page="guide-construction-year" />
+
       <Link
         href={buildRoute(routes.BEFORE_LAND_REGISTRY)}
         label="Le cadastre"
         kind={ELinkKind.SECONDARY}
       />
+
       <Link
         href={buildRoute(routes.BEFORE_BUILDING_PERMIT)}
         label="Les permis de construire"
         kind={ELinkKind.SECONDARY}
       />
+
       <Button
         onClick={() => router.back()}
         leftIcon={mdiArrowLeft}

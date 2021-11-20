@@ -5,6 +5,7 @@ import * as TITLES from '@locadocs/design-system/components/Title';
 import { mdiArrowLeft, mdiArrowRight } from '@mdi/js';
 import { resultRoutes, routes } from './index';
 import { BreadCrump } from '@components/BreadCrump';
+import { Questionnaire } from '@components/Questionnaire';
 
 export const WhoCanGetBuildingPermit = (
   buildRoute: (route: string) => string,
@@ -56,6 +57,8 @@ export const WhoCanGetBuildingPermit = (
           .
         </blockquote>
       </div>
+
+      <Questionnaire page="who-can-get-building-permit" />
 
       <Link
         href={buildRoute(

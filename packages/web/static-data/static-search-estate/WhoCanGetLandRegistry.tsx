@@ -5,6 +5,7 @@ import * as TITLES from '@locadocs/design-system/components/Title';
 import { mdiArrowLeft, mdiArrowRight } from '@mdi/js';
 import { resultRoutes, routes } from './index';
 import { BreadCrump } from '@components/BreadCrump';
+import { Questionnaire } from '@components/Questionnaire';
 
 export const WhoCanGetLandRegistry = (
   buildRoute: (route: string) => string,
@@ -52,6 +53,8 @@ export const WhoCanGetLandRegistry = (
         </p>
       </div>
 
+      <Questionnaire page="who-can-get-land-registry" />
+
       <Link
         href={buildRoute(
           inseeCode
@@ -62,6 +65,7 @@ export const WhoCanGetLandRegistry = (
         kind={ELinkKind.PRIMARY}
         leftIcon={mdiArrowRight}
       />
+
       <Link
         href={buildRoute(
           inseeCode

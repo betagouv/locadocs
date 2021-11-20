@@ -5,6 +5,7 @@ import * as TITLES from '@locadocs/design-system/components/Title';
 import { mdiArrowLeft } from '@mdi/js';
 import { routes } from '.';
 import { BreadCrump } from '@components/BreadCrump';
+import { Questionnaire } from '@components/Questionnaire';
 
 export const GuideContiguity = (
   buildRoute: (route: string) => string,
@@ -44,11 +45,14 @@ export const GuideContiguity = (
         </p>
       </div>
 
+      <Questionnaire page="guide-contiguity" />
+
       <Link
         href={buildRoute(routes.GUIDE_PROPERTY_DEED)}
         label="Chercher un titre de propriété"
         kind={ELinkKind.SECONDARY}
       />
+
       <Button
         onClick={() => router.back()}
         leftIcon={mdiArrowLeft}

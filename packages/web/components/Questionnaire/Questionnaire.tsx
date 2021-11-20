@@ -16,12 +16,12 @@ import { Button } from '@locadocs/design-system/components/Button';
 
 type TProps = {
   page: string;
-  params: Record<string, string>;
+  params?: Record<string, string>;
 };
 
 export const Questionnaire: React.FC<TProps> = ({
   page,
-  params,
+  params = {},
 }: TProps): JSX.Element => {
   const [isSaving, setIsSaving] = React.useState<boolean>(false);
   const [hasAnswered, setHasAnswered] = React.useState<boolean>(false);

@@ -5,6 +5,7 @@ import * as TITLES from '@locadocs/design-system/components/Title';
 import { mdiArrowLeft, mdiArrowRight } from '@mdi/js';
 import { resultRoutes, routes } from './index';
 import { BreadCrump } from '@components/BreadCrump';
+import { Questionnaire } from '@components/Questionnaire';
 
 export const WhoCanGetMortgageRegistry = (
   buildRoute: (route: string) => string,
@@ -48,6 +49,8 @@ export const WhoCanGetMortgageRegistry = (
           <li>Les tiers peuvent demander un accès anticipé par dérogation.</li>
         </ul>
       </div>
+
+      <Questionnaire page="who-can-get-mortgage-registry" />
 
       <Link
         href={buildRoute(

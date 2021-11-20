@@ -27,21 +27,25 @@ export const DocumentChoice = (
         label="Je cherche un permis de construire"
         kind={ELinkKind.SECONDARY}
       />
+
       <Link
         href={buildRoute(routes.BEFORE_NOTARIZED_DEED)}
         label="Je cherche un acte notarié"
         kind={ELinkKind.SECONDARY}
       />
+
       <Link
         href={buildRoute(routes.BEFORE_MORTGAGE_REGISTRY)}
         label="Je cherche un registre des hypothèques"
         kind={ELinkKind.SECONDARY}
       />
+
       <Link
         href={buildRoute(routes.BEFORE_LAND_REGISTRY)}
         label="Je cherche le cadastre"
         kind={ELinkKind.SECONDARY}
       />
+
       <Link
         href={buildRoute(routes.SUGGEST_DOCUMENT)}
         label="Je cherche un autre document"

@@ -5,6 +5,7 @@ import * as TITLES from '@locadocs/design-system/components/Title';
 import { mdiArrowLeft, mdiArrowRight } from '@mdi/js';
 import { resultRoutes, routes } from './index';
 import { BreadCrump } from '@components/BreadCrump';
+import { Questionnaire } from '@components/Questionnaire';
 
 export const InfosBuildingPermit = (
   buildRoute: (route: string) => string,
@@ -82,6 +83,8 @@ export const InfosBuildingPermit = (
         </p>
       </div>
 
+      <Questionnaire page="infos-building-permit" />
+
       <Link
         href={buildRoute(
           inseeCode
@@ -92,11 +95,13 @@ export const InfosBuildingPermit = (
         leftIcon={mdiArrowRight}
         kind={ELinkKind.PRIMARY}
       />
+
       <Link
         href={buildRoute(routes.DEAD_END)}
         label="Non, ce document ne correspond pas à ma recherche"
         kind={ELinkKind.SECONDARY}
       />
+
       <Button
         onClick={() => router.back()}
         leftIcon={mdiArrowLeft}
