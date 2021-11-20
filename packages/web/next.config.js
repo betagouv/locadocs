@@ -12,13 +12,14 @@ const contentSecurityPolicy = Object.entries({
   'connect-src': "'self' https://stats.data.gouv.fr",
   'prefetch-src': "'self'",
   'script-src': isDev
-    ? "'self' 'unsafe-inline' 'unsafe-eval' https://stats.data.gouv.fr"
-    : "'self' 'unsafe-inline' https://stats.data.gouv.fr",
+    ? "'self' 'unsafe-inline' 'unsafe-eval' https://stats.data.gouv.fr https://www.googletagmanager.com/ https://www.googleadservices.com https://googleads.g.doubleclick.net"
+    : "'self' 'unsafe-inline' https://stats.data.gouv.fr https://www.googletagmanager.com/ https://www.googleadservices.com https://googleads.g.doubleclick.net",
   'style-src': "'self' 'unsafe-inline'",
-  'img-src': "'self' data:",
+  'img-src':
+    "'self' data: https://www.google.com https://www.google.fr https://*.privacysandbox.googleadservices.com https://www.googletagmanager.com https://googleads.g.doubleclick.net",
   sandbox: 'allow-scripts allow-same-origin allow-forms allow-downloads',
   'frame-ancestors': "'none'",
-  'trusted-types': "'none'",
+  // 'trusted-types': "'none'",
   'navigate-to': "'self'",
   'form-action': "'none'",
   'base-uri': "'none'",

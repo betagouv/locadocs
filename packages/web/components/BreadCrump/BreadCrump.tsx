@@ -19,12 +19,12 @@ export const BreadCrump: React.FC<IBreadCrump> = ({
       {steps.map(step => {
         if (step.href) {
           return (
-            <>
-              <NextLink href={step.href} key={step.label}>
+            <React.Fragment key={step.label}>
+              <NextLink href={step.href}>
                 <a href={step.href}>{step.label}</a>
               </NextLink>
               <Icon path={mdiChevronRight} />
-            </>
+            </React.Fragment>
           );
         }
         return <span key={step.label}>{step.label}</span>;

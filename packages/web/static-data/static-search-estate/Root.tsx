@@ -1,13 +1,23 @@
+import { useEffect } from 'react';
 import { useRouter } from 'next/router';
-import { ELinkKind, Link } from '@locadocs/design-system/components/Link';
 import { Button, EButtonKind } from '@locadocs/design-system/components/Button';
+import { ELinkKind, Link } from '@locadocs/design-system/components/Link';
 import * as TITLES from '@locadocs/design-system/components/Title';
 import { routes } from './index';
 import { mdiArrowLeft } from '@mdi/js';
 import { BreadCrump } from '@components/BreadCrump';
+import { googleTrackEvent } from '@utils/google';
 
 export const Root = (buildRoute: (route: string) => string): JSX.Element => {
   const router = useRouter();
+
+  useEffect(() => {
+    googleTrackEvent({
+      action: 'conversion',
+      // eslint-disable-next-line @typescript-eslint/naming-convention
+      params: { send_to: 'AW-864368696/YtcOCKzQ-YMDELjwlJwD' },
+    });
+  }, []);
 
   return (
     <>

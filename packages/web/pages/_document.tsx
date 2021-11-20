@@ -2,6 +2,7 @@ import Document, { Html, Head, Main, NextScript } from 'next/document';
 import type { DocumentContext, DocumentInitialProps } from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
 import type { RenderPageResult } from 'next/dist/shared/lib/utils';
+import { GOOGLE_TAG } from '@constants/google';
 
 export default class MyDocument extends Document {
   static async getInitialProps(
@@ -35,7 +36,26 @@ export default class MyDocument extends Document {
   public render(): JSX.Element {
     return (
       <Html lang="fr">
-        <Head />
+        <Head>
+          {/* Global Site Tag (gtag.js) - Google Analytics */}
+          <script
+            async
+            src={`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_TAG}`}
+          />
+          <script
+            dangerouslySetInnerHTML={{
+              // eslint-disable-next-line @typescript-eslint/naming-convention
+              __html: `
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${GOOGLE_TAG}', {
+                  page_path: window.location.pathname,
+                });
+              `,
+            }}
+          />
+        </Head>
         <body>
           <Main />
           <NextScript />
