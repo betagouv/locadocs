@@ -1,7 +1,7 @@
+import React from 'react';
+import type { NextPage } from 'next';
 import { SiteLayout } from '@components/Layouts';
 import { ContentPage } from '@locadocs/design-system/components/ContentPage';
-import * as React from 'react';
-import type { NextPage } from 'next';
 import * as TITLE from '@locadocs/design-system/components/Title';
 
 const Accessibility: NextPage = () => (

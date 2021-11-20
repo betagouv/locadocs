@@ -1,16 +1,15 @@
-import { useRouter } from 'next/router';
+import React from 'react';
+import type { NextPage } from 'next';
+import { useRouter, withRouter } from 'next/router';
 import { SiteLayout } from '@components/Layouts';
 import type { GetStaticProps, GetStaticPaths } from 'next';
 import { StaticData } from '@views/StaticData';
-import * as React from 'react';
-import type { NextPage } from 'next';
 import {
   routes,
   GLOBALS,
   ROUTES_CONTENT,
 } from 'static-data/static-search-estate';
 import * as ROUTES from '@constants/routes';
-import { withRouter } from 'next/router';
 
 /**
  * Routing for the intermediary steps will be :

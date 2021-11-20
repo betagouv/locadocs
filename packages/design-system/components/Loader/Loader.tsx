@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import * as COLORS from '../../constants/colors';
 import { SContainer } from './Loader.styled';
 

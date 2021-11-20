@@ -1,8 +1,8 @@
+import React from 'react';
+import type { NextPage } from 'next';
 import { ApplicationHead } from '@components/ApplicationHead';
 import { ContentPage } from '@locadocs/design-system/components/ContentPage';
 import { WebFooter } from '@components/WebFooter';
-import * as React from 'react';
-import type { NextPage } from 'next';
 import * as TITLE from '@locadocs/design-system/components/Title';
 import { WebHeader } from '@components/WebHeader';
 
