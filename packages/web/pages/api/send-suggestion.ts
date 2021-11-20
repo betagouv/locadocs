@@ -5,18 +5,19 @@ export default async function sendSuggestion(
   request: NextApiRequest,
   response: NextApiResponse,
 ): Promise<void> {
-  const { comment, page, params } = request.body;
+  const { comment, page, params, email } = request.body;
   const client = await connectToDb();
   await client
     .db('locadocs')
     .collection('suggestions')
     .insertOne({
       comment,
+      createdAt: new Date(),
+      email,
+      ip: request.headers['x-real-ip'] || request.connection.remoteAddress,
       page,
       params,
       userAgent: request.headers['user-agent'],
-      ip: request.headers['x-real-ip'] || request.connection.remoteAddress,
-      createdAt: new Date(),
     });
 
   response.status(200).send('ok');

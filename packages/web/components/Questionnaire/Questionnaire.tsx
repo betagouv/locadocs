@@ -49,6 +49,7 @@ export const Questionnaire: React.FC<TProps> = ({
   ): Promise<void> => {
     event.preventDefault();
     const comment = (event.currentTarget.elements[0] as HTMLInputElement).value;
+    const email = (event.currentTarget.elements[1] as HTMLInputElement).value;
 
     if (comment === '') {
       return;
@@ -62,7 +63,7 @@ export const Questionnaire: React.FC<TProps> = ({
         // eslint-disable-next-line @typescript-eslint/naming-convention
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ comment, page, params }),
+      body: JSON.stringify({ comment, page, params, email }),
     });
     setIsSubmittingComment(false);
     setHasSendComment(true);
@@ -110,6 +111,14 @@ export const Questionnaire: React.FC<TProps> = ({
                   placeholder: 'Ce serait mieux si...',
                 }}
                 label="Vos suggestions"
+              />
+
+              <Input
+                inputProps={{
+                  placeholder: 'ex : nom.prenom@mail.com',
+                }}
+                label="Votre email"
+                subLabel="Si vous souhaitez que nous vous recontactions pour vous aider au mieu"
               />
 
               <Button
