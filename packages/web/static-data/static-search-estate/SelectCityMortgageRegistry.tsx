@@ -33,6 +33,11 @@ export const SelectCityMortgageRegistry = (
 
       <TITLES.H1>Dans quelle ville se situe le bien&nbsp;?</TITLES.H1>
 
+      <p>
+        Cette question va nous permettre de vous guider vers le bon
+        interlocuteur.
+      </p>
+
       <CityAutoComplete buildLink={buildLink} />
 
       <div className="spacer" />

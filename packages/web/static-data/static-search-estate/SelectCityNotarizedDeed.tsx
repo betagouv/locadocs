@@ -35,6 +35,11 @@ export const SelectCityNotarizedDeed = (
         Dans quelle ville se situe l’étude du notaire&nbsp;?
       </TITLES.H1>
 
+      <p>
+        Cette question va nous permettre de vous guider vers le bon
+        interlocuteur.
+      </p>
+
       <CityAutoComplete buildLink={buildLink} />
 
       <div className="spacer" />
