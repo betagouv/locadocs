@@ -50,8 +50,6 @@ export const GuideOwnershipHistory = (
         </p>
       </div>
 
-      <Questionnaire page="guide-ownership-history" />
-
       <Link
         href={buildRoute(routes.GUIDE_PROPERTY_DEED)}
         label="Chercher un titre de propriété"
@@ -81,6 +79,8 @@ export const GuideOwnershipHistory = (
         leftIcon={mdiArrowLeft}
         kind={EButtonKind.TERTIARY}
       />
+
+      <Questionnaire page="guide-ownership-history" />
     </>
   );
 };

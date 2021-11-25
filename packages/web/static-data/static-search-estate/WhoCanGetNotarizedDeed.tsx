@@ -49,8 +49,6 @@ export const WhoCanGetNotarizedDeed = (
         </ul>
       </div>
 
-      <Questionnaire page="who-can-get-notarized-deed" />
-
       <Link
         href={buildRoute(
           inseeCode
@@ -67,6 +65,8 @@ export const WhoCanGetNotarizedDeed = (
         leftIcon={mdiArrowLeft}
         kind={EButtonKind.TERTIARY}
       />
+
+      <Questionnaire page="who-can-get-notarized-deed" />
     </>
   );
 };

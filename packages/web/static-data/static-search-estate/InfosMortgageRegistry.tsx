@@ -81,8 +81,6 @@ export const InfosMortgageRegistry = (
         </p>
       </div>
 
-      <Questionnaire page="infos-mortgage-registry" />
-
       <Link
         href={buildRoute(
           inseeCode
@@ -105,6 +103,8 @@ export const InfosMortgageRegistry = (
         leftIcon={mdiArrowLeft}
         kind={EButtonKind.TERTIARY}
       />
+
+      <Questionnaire page="infos-mortgage-registry" />
     </>
   );
 };

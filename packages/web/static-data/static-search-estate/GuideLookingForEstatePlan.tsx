@@ -48,8 +48,6 @@ export const GuideLookingForEstatePlan = (
         </p>
       </div>
 
-      <Questionnaire page="guide-looking-for-estate-plans" />
-
       <Link
         href={buildRoute(
           inseeCode
@@ -78,6 +76,8 @@ export const GuideLookingForEstatePlan = (
         leftIcon={mdiArrowLeft}
         kind={EButtonKind.TERTIARY}
       />
+
+      <Questionnaire page="guide-looking-for-estate-plans" />
     </>
   );
 };

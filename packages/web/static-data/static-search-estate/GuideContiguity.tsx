@@ -45,8 +45,6 @@ export const GuideContiguity = (
         </p>
       </div>
 
-      <Questionnaire page="guide-contiguity" />
-
       <Link
         href={buildRoute(routes.GUIDE_PROPERTY_DEED)}
         label="Chercher un titre de propriété"
@@ -58,6 +56,8 @@ export const GuideContiguity = (
         leftIcon={mdiArrowLeft}
         kind={EButtonKind.TERTIARY}
       />
+
+      <Questionnaire page="guide-contiguity" />
     </>
   );
 };

@@ -44,8 +44,6 @@ export const GuidePreviousRepairs = (
         </p>
       </div>
 
-      <Questionnaire page="guide-previous-repairs" />
-
       <Link
         href={buildRoute(
           inseeCode
@@ -74,6 +72,8 @@ export const GuidePreviousRepairs = (
         leftIcon={mdiArrowLeft}
         kind={EButtonKind.TERTIARY}
       />
+
+      <Questionnaire page="guide-previous-repairs" />
     </>
   );
 };

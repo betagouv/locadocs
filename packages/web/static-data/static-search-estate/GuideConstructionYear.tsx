@@ -43,8 +43,6 @@ export const GuideConstructionYear = (
         </p>
       </div>
 
-      <Questionnaire page="guide-construction-year" />
-
       <Link
         href={buildRoute(routes.BEFORE_LAND_REGISTRY)}
         label="Le cadastre"
@@ -62,6 +60,8 @@ export const GuideConstructionYear = (
         leftIcon={mdiArrowLeft}
         kind={EButtonKind.TERTIARY}
       />
+
+      <Questionnaire page="guide-construction-year" />
     </>
   );
 };

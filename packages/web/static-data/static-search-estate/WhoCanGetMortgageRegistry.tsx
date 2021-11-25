@@ -50,8 +50,6 @@ export const WhoCanGetMortgageRegistry = (
         </ul>
       </div>
 
-      <Questionnaire page="who-can-get-mortgage-registry" />
-
       <Link
         href={buildRoute(
           inseeCode
@@ -68,6 +66,8 @@ export const WhoCanGetMortgageRegistry = (
         leftIcon={mdiArrowLeft}
         kind={EButtonKind.TERTIARY}
       />
+
+      <Questionnaire page="who-can-get-mortgage-registry" />
     </>
   );
 };

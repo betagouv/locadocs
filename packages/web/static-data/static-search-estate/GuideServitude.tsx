@@ -50,8 +50,6 @@ export const GuideServitude = (
         </p>
       </div>
 
-      <Questionnaire page="guide-servitude" />
-
       <Link
         href={buildRoute(routes.GUIDE_PROPERTY_DEED)}
         label="Chercher un titre de propriété"
@@ -63,6 +61,8 @@ export const GuideServitude = (
         leftIcon={mdiArrowLeft}
         kind={EButtonKind.TERTIARY}
       />
+
+      <Questionnaire page="guide-servitude" />
     </>
   );
 };

@@ -83,8 +83,6 @@ export const InfosBuildingPermit = (
         </p>
       </div>
 
-      <Questionnaire page="infos-building-permit" />
-
       <Link
         href={buildRoute(
           inseeCode
@@ -107,6 +105,8 @@ export const InfosBuildingPermit = (
         leftIcon={mdiArrowLeft}
         kind={EButtonKind.TERTIARY}
       />
+
+      <Questionnaire page="infos-building-permit" />
     </>
   );
 };

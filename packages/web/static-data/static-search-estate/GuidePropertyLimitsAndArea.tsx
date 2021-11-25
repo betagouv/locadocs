@@ -56,8 +56,6 @@ export const GuidePropertyLimitsAndArea = (
         </p>
       </div>
 
-      <Questionnaire page="guide-property-limits-and-area" />
-
       <Link
         href={buildRoute(routes.BEFORE_NOTARIZED_DEED)}
         label="Les actes notariés"
@@ -75,6 +73,8 @@ export const GuidePropertyLimitsAndArea = (
         leftIcon={mdiArrowLeft}
         kind={EButtonKind.TERTIARY}
       />
+
+      <Questionnaire page="guide-property-limits-and-area" />
     </>
   );
 };

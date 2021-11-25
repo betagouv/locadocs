@@ -65,8 +65,6 @@ export const InfosNotarizedDeed = (
         </p>
       </div>
 
-      <Questionnaire page="infos-notarized-deed" />
-
       <Link
         href={buildRoute(
           inseeCode
@@ -89,6 +87,8 @@ export const InfosNotarizedDeed = (
         leftIcon={mdiArrowLeft}
         kind={EButtonKind.TERTIARY}
       />
+
+      <Questionnaire page="infos-notarized-deed" />
     </>
   );
 };

@@ -53,8 +53,6 @@ export const WhoCanGetLandRegistry = (
         </p>
       </div>
 
-      <Questionnaire page="who-can-get-land-registry" />
-
       <Link
         href={buildRoute(
           inseeCode
@@ -82,6 +80,8 @@ export const WhoCanGetLandRegistry = (
         leftIcon={mdiArrowLeft}
         kind={EButtonKind.TERTIARY}
       />
+
+      <Questionnaire page="who-can-get-land-registry" />
     </>
   );
 };

@@ -46,8 +46,6 @@ export const GuidePropertyDeed = (
         </p>
       </div>
 
-      <Questionnaire page="guide-property-deed" />
-
       <Link
         href={buildRoute(routes.BEFORE_NOTARIZED_DEED)}
         label="Les actes notariés"
@@ -65,6 +63,8 @@ export const GuidePropertyDeed = (
         leftIcon={mdiArrowLeft}
         kind={EButtonKind.TERTIARY}
       />
+
+      <Questionnaire page="guide-property-deed" />
     </>
   );
 };

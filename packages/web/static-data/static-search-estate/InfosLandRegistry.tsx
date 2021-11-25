@@ -105,8 +105,6 @@ export const InfosLandRegistry = (
         </p>
       </div>
 
-      <Questionnaire page="infos-land-registry" />
-
       <Link
         href={buildRoute(
           inseeCode
@@ -140,6 +138,8 @@ export const InfosLandRegistry = (
         leftIcon={mdiArrowLeft}
         kind={EButtonKind.TERTIARY}
       />
+
+      <Questionnaire page="infos-land-registry" />
     </>
   );
 };
