@@ -1,15 +1,16 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { connectToDb } from '@locadocs/shared/utils/mongo';
+import type { City } from '@locadocs/shared/types/City';
 
-type Data = {
-  mortgageRegistry?: Document;
-  city?: Document;
+type TResponse = {
+  mortgageRegistry?: Record<string, string>;
+  city?: City;
   error?: string;
 };
 
 export default async function getMortgageRegistry(
   request: NextApiRequest,
-  response: NextApiResponse<Data>,
+  response: NextApiResponse<TResponse>,
 ): Promise<void> {
   const { inseeCode } = request.query;
 
@@ -20,11 +21,14 @@ export default async function getMortgageRegistry(
 
   const client = await connectToDb();
   const [mortgageRegistry, city] = await Promise.all([
-    await client
+    (await client
       .db('locadocs')
       .collection('mortgageRegistries')
-      .findOne({ cities: inseeCode }),
-    await client.db('locadocs').collection('cities').findOne({ inseeCode }),
+      .findOne({ cities: inseeCode })) as Record<string, string>,
+    (await client
+      .db('locadocs')
+      .collection('cities')
+      .findOne({ inseeCode })) as City,
   ]);
 
   if (!mortgageRegistry) {
@@ -32,7 +36,7 @@ export default async function getMortgageRegistry(
   }
 
   response.status(200).json({
-    city: city as Document,
-    mortgageRegistry: mortgageRegistry as Document,
+    city: city || undefined,
+    mortgageRegistry: mortgageRegistry || undefined,
   });
 }

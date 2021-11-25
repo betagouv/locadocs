@@ -1,14 +1,15 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { connectToDb } from '@locadocs/shared/utils/mongo';
+import type { City } from '@locadocs/shared/types/City';
 
-type Data = {
-  city?: Data;
+type TResponse = {
+  city?: City;
   error?: string;
 };
 
 export default async function getBuildingPermit(
   request: NextApiRequest,
-  response: NextApiResponse<Data>,
+  response: NextApiResponse<TResponse>,
 ): Promise<void> {
   const { inseeCode } = request.query;
 
@@ -18,16 +19,16 @@ export default async function getBuildingPermit(
   }
 
   const client = await connectToDb();
-  const city = await client
+  const city = (await client
     .db('locadocs')
     .collection('cities')
-    .findOne({ inseeCode });
+    .findOne({ inseeCode })) as City;
 
   if (!city) {
     response.status(404).json({ error: 'City not found.' });
   }
 
   response.status(200).json({
-    city: city as Data,
+    city: city || undefined,
   });
 }

@@ -3,14 +3,14 @@ import { connectToDb } from '@locadocs/shared/utils/mongo';
 // import type { MetaSortOperators } from 'mongodb';
 import { normaliseCityName } from '@utils/normaliseCityName';
 
-type Data = {
+type TResponse = {
   result?: Array<Record<string, string>>;
   error?: string;
 };
 
 export default async function getCities(
   request: NextApiRequest,
-  response: NextApiResponse<Data>,
+  response: NextApiResponse<TResponse>,
 ): Promise<void> {
   const { search } = request.query;
 
