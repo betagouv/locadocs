@@ -2,7 +2,7 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 import { connectToDb } from '@locadocs/shared/utils/mongo';
 
 type Data = {
-  city?: Document;
+  city?: Data;
   error?: string;
 };
 
@@ -28,6 +28,6 @@ export default async function getBuildingPermit(
   }
 
   response.status(200).json({
-    city: city as Document,
+    city: city as Data,
   });
 }
