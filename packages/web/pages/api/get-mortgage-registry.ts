@@ -24,11 +24,11 @@ export default async function getMortgageRegistry(
     (await client
       .db('locadocs')
       .collection('mortgageRegistries')
-      .findOne({ cities: inseeCode })) as Record<string, string>,
+      .findOne({ cities: inseeCode })) as unknown as Record<string, string>,
     (await client
       .db('locadocs')
       .collection('cities')
-      .findOne({ inseeCode })) as City,
+      .findOne({ inseeCode })) as unknown as City,
   ]);
 
   if (!mortgageRegistry) {

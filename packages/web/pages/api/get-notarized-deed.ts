@@ -22,7 +22,7 @@ export default async function getNotarizedDeed(
   const city = (await client
     .db('locadocs')
     .collection('cities')
-    .findOne({ inseeCode })) as City;
+    .findOne({ inseeCode })) as unknown as City;
 
   if (!city) {
     response.status(404).json({ error: 'City not found.' });
