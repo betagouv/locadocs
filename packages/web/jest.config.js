@@ -22,11 +22,7 @@ module.exports = {
     '^@static/(.*)$': '<rootDir>/static-data/$1',
     '^@views/(.*)$': '<rootDir>/views/$1',
   },
-  testPathIgnorePatterns: [
-    '<rootDir>/node_modules/',
-    '<rootDir>/.next/',
-    '<rootDir>/cypress/',
-  ],
+  testPathIgnorePatterns: ['<rootDir>/node_modules/', '<rootDir>/.next/'],
   testEnvironment: 'jsdom',
   transform: {
     /* Use babel-jest to transpile tests with the next/babel preset
