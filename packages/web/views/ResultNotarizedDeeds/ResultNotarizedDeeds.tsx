@@ -12,6 +12,7 @@ import { Questionnaire } from '@components/Questionnaire';
 import { StaticEure } from './StaticEure';
 import { StaticIleEtVilaine } from './StaticIleEtVilaine';
 import { StaticSeineMartime } from './StaticSeineMartime';
+import { googleTrackEvent } from '@utils/google';
 
 export const ResultNotarizedDeeds = (): JSX.Element => {
   let isMounted = true;
@@ -40,6 +41,12 @@ export const ResultNotarizedDeeds = (): JSX.Element => {
   };
 
   useEffect(() => {
+    googleTrackEvent({
+      action: 'conversion',
+      // eslint-disable-next-line @typescript-eslint/naming-convention
+      params: { send_to: 'AW-864368696/VVKtCO67uYUDELjwlJwD' },
+    });
+
     loadData();
 
     return (): void => {

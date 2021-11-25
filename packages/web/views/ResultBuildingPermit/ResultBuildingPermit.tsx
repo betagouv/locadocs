@@ -11,6 +11,7 @@ import { Loader } from '@locadocs/design-system/components/Loader';
 import { Questionnaire } from '@components/Questionnaire';
 import { StaticRennes } from './StaticRennes';
 import { StaticHavre } from './StaticHavre';
+import { googleTrackEvent } from '@utils/google';
 
 export const ResultBuildingPermit = (): JSX.Element => {
   let isMounted = true;
@@ -39,6 +40,12 @@ export const ResultBuildingPermit = (): JSX.Element => {
   };
 
   useEffect(() => {
+    googleTrackEvent({
+      action: 'conversion',
+      // eslint-disable-next-line @typescript-eslint/naming-convention
+      params: { send_to: 'AW-864368696/VVKtCO67uYUDELjwlJwD' },
+    });
+
     loadData();
 
     return (): void => {

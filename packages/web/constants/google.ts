@@ -1,1 +1,1 @@
-export const GOOGLE_TAG = 'AW-864368696';
+export const GOOGLE_TAG = 'G-C3X5JWT7BW';
